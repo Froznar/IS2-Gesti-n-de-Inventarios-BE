@@ -10,6 +10,10 @@ class User_Product_Register_Service {
     return user_product_register_repository.find(id);
   }
 
+  Future<User> getByAccount(String account) {
+    return user_product_register_repository.findAccount(account);
+  }
+
   Future<List<User>> getAll() {
     return user_product_register_repository.findAll();
   }

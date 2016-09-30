@@ -15,6 +15,11 @@ class User_Product_Register_Repository {
     return user;
   }
 
+  Future<User> findAccount(String account) async {
+    User user = (await connection.query('SELECT * FROM "user" WHERE account = @account AND user_type=1', {'account':account})).map(mapRowToUser).first;
+    return user;
+  }
+
   Future<List<User>> findAll() async {
     return (await connection.query('SELECT * FROM "user" WHERE user_type=1')).map(mapRowToUser).toList();
   }
