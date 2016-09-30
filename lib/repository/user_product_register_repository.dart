@@ -20,6 +20,13 @@ class User_Product_Register_Repository {
     return user;
   }
 
+  Future<User> createUser(String first_name, String last_name, String email, String account, String password) async{
+    await connection.query('INSERT INTO "user" (first_name, last_name, email, account, "password", user_type) values (@first_name, @last_name, @email, @account, @password, 1)', {'first_name':first_name, 'last_name':last_name, 'email':email, 'account':account, 'password':password});
+    //User user = (await connection.query('SELECT * FROM "user" WHERE account = @account AND user_type=1', {'account':account})).map(mapRowToUser).first;
+    //return user;
+    return findAccount(account);
+  }
+
   Future<List<User>> findAll() async {
     return (await connection.query('SELECT * FROM "user" WHERE user_type=1')).map(mapRowToUser).toList();
   }
