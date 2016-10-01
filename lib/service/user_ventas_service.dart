@@ -1,16 +1,20 @@
 import '../repository/user_ventas_repository.dart';
-import '../model/user.dart';
+import '../model/vendedor.dart';
 import 'dart:async';
 
 class UserVentasService {
   UserVentasRepository userRepository;
   UserVentasService(this.userRepository);
 
-  Future<User> get(int id) {
+  Future<Vendedor> get(int id) {
     return userRepository.find(id);
   }
 
-  Future<List<User>> getAll() {
+  Future<Vendedor> get_name(String name) {
+    return userRepository.find_name(name);
+  }
+
+  Future<List<Vendedor>> getAll() {
     return userRepository.findAll();
   }
 }

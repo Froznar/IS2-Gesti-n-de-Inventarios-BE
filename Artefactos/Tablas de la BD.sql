@@ -10,4 +10,10 @@
 
 insert into "user"(first_name,last_name,email,account,user_type,"password") values('javier','marin','algo@gmail.com','paracelso',2,'contraceña');
 insert into "user"(first_name,last_name,email,account,user_type,"password") values('francisco','marin','algo@gmail.com','froznar',1,'contraceña');
-insert into "user"(first_name,last_name,email,account,user_type,"password") values('test','testar','test2@gmail.com','sdf',3,'contraceña');
+
+create table "vendedor"(
+  id_vendedor SERIAL primary key,
+  name_vendedor varchar
+);
+
+insert into "vendedor"(name_vendedor) values('karen');
