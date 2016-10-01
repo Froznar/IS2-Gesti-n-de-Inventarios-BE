@@ -19,6 +19,7 @@ class User_Administrator_Rest {
   Future<List<User>> getUsers() {
     return user_administrator_service.getAll();
   }
+
   @ApiMethod(path: 'all')
   Future<List<User>> getUsers() {
     return userService.getAll();
