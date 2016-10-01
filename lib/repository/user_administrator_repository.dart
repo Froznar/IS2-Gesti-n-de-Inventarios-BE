@@ -20,9 +20,6 @@ class User_Administrator_Repository {
     return (await connection.query('SELECT * FROM "user" WHERE user_type=3')).map(mapRowToUser).toList();
   }
 
-
-
-
   User mapRowToUser(pg.Row row) {
     return new User()
       ..id = row.id
