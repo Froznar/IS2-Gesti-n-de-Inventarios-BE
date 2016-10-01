@@ -15,8 +15,14 @@ class User_Product_Register_Rest {
     return user_product_register_service.get(int.parse(id));
   }
 
+  @ApiMethod(path: 'user_product_register/account/{account}')
+  Future<User> getUserAccount(String account) {
+    return user_product_register_service.getByAccount(account);
+  }
+
   @ApiMethod(path: 'all')
   Future<List<User>> getUsers() {
     return user_product_register_service.getAll();
   }
+
 }
