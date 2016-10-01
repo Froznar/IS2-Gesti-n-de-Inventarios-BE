@@ -16,7 +16,7 @@ class UserVentasRest {
   }
 
   @ApiMethod(path: 'vendedor/name/{name}')
-  Future<Vendedor> get_nameVendedor(String name) {
+  Future<List<Vendedor>> get_nameVendedor(String name) {
     return vendedorService.get_name(name);
   }
 

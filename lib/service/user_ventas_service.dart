@@ -10,7 +10,7 @@ class UserVentasService {
     return userRepository.find(id);
   }
 
-  Future<Vendedor> get_name(String name) {
+  Future<List<Vendedor>> get_name(String name) {
     return userRepository.find_name(name);
   }
 

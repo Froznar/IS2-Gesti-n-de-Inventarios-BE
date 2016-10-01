@@ -15,9 +15,8 @@ class UserVentasRepository {
     return vendedor;
   }
 
-  Future<Vendedor> find_name(String name) async {
-    Vendedor vendedor = (await connection.query('SELECT * FROM "vendedor" WHERE name_vendedor = @name ', {'name': name})).map(mapRowToVendedor).first;
-    return vendedor;
+  Future<List<Vendedor>> find_name(String name) async {
+    return (await connection.query('SELECT * FROM "vendedor" WHERE name_vendedor = @name ', {'name': name})).map(mapRowToVendedor).toList();
   }
 
   Future<List<Vendedor>> findAll() async {
