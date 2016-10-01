@@ -24,4 +24,5 @@ class User_Product_Register_Rest {
   Future<List<User>> getUsers() {
     return user_product_register_service.getAll();
   }
+
 }
