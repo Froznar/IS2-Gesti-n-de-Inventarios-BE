@@ -15,9 +15,13 @@ class User_Administrator_Repository {
     return user;
   }
 
+  /*General Find */
   Future<List<User>> findAll() async {
-    return (await connection.query('SELECT * FROM "user" WHERE user_type=3')).map(mapRowToUser);
+    return (await connection.query('SELECT * FROM "user" WHERE user_type=3')).map(mapRowToUser).toList();
   }
+
+
+
 
   User mapRowToUser(pg.Row row) {
     return new User()
