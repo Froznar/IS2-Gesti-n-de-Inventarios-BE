@@ -11,7 +11,8 @@
 insert into "user"(first_name,last_name,email,account,user_type,"password") values('javier','marin','algo@gmail.com','paracelso',2,'contraceña')
 insert into "user"(first_name,last_name,email,account,user_type,"password") values('francisco','marin','algo@gmail.com','froznar',1,'contraceña')
 
-
+select * from "proveedor";
+drop table "proveedor";
 
 create table "proveedor"(
   id_proveedor SERIAL primary key,
