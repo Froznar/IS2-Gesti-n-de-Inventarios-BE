@@ -16,7 +16,7 @@ class UserRepository {
   }
 
   Future<List<User>> findAll() async {
-    return (await connection.query('SELECT * FROM "user"')).map(mapRowToUser);
+    return (await connection.query('SELECT * FROM "user"')).map(mapRowToUser).toList();
   }
 
   User mapRowToUser(pg.Row row) {

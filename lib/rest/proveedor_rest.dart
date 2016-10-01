@@ -16,7 +16,7 @@ class ProveedorRest {
   }
 
   @ApiMethod(path: 'proveedor/name/{name}')
-  Future<Proveedor> get_nameProveedor(String name) {
+  Future<List<Proveedor>> get_nameProveedor(String name) {
     return proveedorService.get_name(name);
   }
 
