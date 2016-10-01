@@ -2,26 +2,26 @@ import 'dart:async';
 import 'package:rpc/rpc.dart';
 
 import '../service/user_ventas_service.dart';
-import '../model/vendedor.dart';
+import '../model/user.dart';
 
-@ApiClass(name: 'vendedor', version: 'v1', description: 'User server side API')
+@ApiClass(name: 'user_ventas', version: 'v1', description: 'User server side API')
 class UserVentasRest {
-  UserVentasService vendedorService;
+  UserVentasService User_ventasService;
 
-  UserVentasRest(this.vendedorService);
+  UserVentasRest(this.User_ventasService);
 
-  @ApiMethod(path: 'vendedor/{id}')
-  Future<Vendedor> getVendedor(String id) {
-    return vendedorService.get(int.parse(id));
+  @ApiMethod(path: 'user_ventas/{id}')
+  Future<User> getVendedor(String id) {
+    return User_ventasService.get(int.parse(id));
   }
 
-  @ApiMethod(path: 'vendedor/name/{name}')
-  Future<List<Vendedor>> get_nameVendedor(String name) {
-    return vendedorService.get_name(name);
+  @ApiMethod(path: 'user_ventas/name/{name}')
+  Future<List<User>> get_nameUser_ventas(String name) {
+    return User_ventasService.get_nameUser_ventas(name);
   }
 
   @ApiMethod(path: 'all')
-  Future<List<Vendedor>> getVendedores() {
-    return vendedorService.getAll();
+  Future<List<User>> getUser_ventas() {
+    return User_ventasService.getAll();
   }
 }
