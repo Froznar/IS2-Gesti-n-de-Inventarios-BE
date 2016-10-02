@@ -16,12 +16,12 @@ class User_Administrator_Rest {
   }
 
   @ApiMethod(path: 'all')
-  Future<List<User>> getUsers() {
+  Future<List<User>> getAdmin() {
     return user_administrator_service.getAll();
   }
 
-  @ApiMethod(path: 'all')
-  Future<List<User>> getUsers() {
-    return userService.getAll();
+  @ApiMethod(path: 'user_administrator/email/{email}')
+  Future<List<User>> getAdminEmail(String email) {
+    return user_administrador_service.getEmail(email);
   }
 }

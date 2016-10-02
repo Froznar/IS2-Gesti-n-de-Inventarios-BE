@@ -22,7 +22,6 @@ insert into "user"(first_name,last_name,email,account,user_type,"password") valu
 insert into "user"(first_name,last_name,email,account,user_type,"password") values('Vanessa','Santillana','vs@gmail.com','ucsp',4,'pasword');
 
 
-
 create table "proveedor"(
   id_proveedor SERIAL primary key,
   name_proveedor varchar
