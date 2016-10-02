@@ -15,6 +15,6 @@ class User_Administrator_Service {
   }
 
   Future<List<User>> getEmail(String email) {
-    return user_administrador_repository.find_email(email);
+    return user_administrator_repository.find_email(email);
   }
 }
