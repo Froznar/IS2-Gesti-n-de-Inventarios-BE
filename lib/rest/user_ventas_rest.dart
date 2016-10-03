@@ -11,7 +11,7 @@ class UserVentasRest {
   UserVentasRest(this.User_ventasService);
 
   @ApiMethod(path: 'user_ventas/{id}')
-  Future<User> getVendedor(String id) {
+  Future<User> getUser(String id) {
     return User_ventasService.get(int.parse(id));
   }
 
