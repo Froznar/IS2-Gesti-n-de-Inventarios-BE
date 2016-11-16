@@ -10,6 +10,10 @@ class UserService {
     return userRepository.find(id);
   }
 
+  Future<User> getAccount(String account){
+    return userRepository.findAccount(account);
+  }
+
   Future<List<User>> getAll() {
     return userRepository.findAll();
   }
