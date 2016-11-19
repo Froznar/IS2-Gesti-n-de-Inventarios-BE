@@ -12,7 +12,7 @@ class ProductRepository {
 
 //  Seleccion por Id de Product
   Future<Product> find(int id) async {
-    Product product = (await connection.query('SELECT * FROM "product" WHERE idProduct = @id', {'id': id})).map(mapRowToProduct).first;
+    Product product = (await connection.query('SELECT * FROM "product" WHERE id = @id', {'id': id})).map(mapRowToProduct).first;
     return product;
   }
 
@@ -25,10 +25,10 @@ class ProductRepository {
   Product mapRowToProduct(pg.Row row) {
     return new Product()
       ..id = row.id
-      ..nameProduct = row.nameProduct
+      ..nameProduct = row.nameproduct
       ..price = row.price
       ..stack = row.stack
-      ..productType = row.productTypee;
+      ..productType = row.producttype;
 
   }
 }
