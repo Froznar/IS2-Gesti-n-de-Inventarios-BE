@@ -41,9 +41,24 @@ Create table product(
  
 );
 
+/*Clase Ventas*/
+Create table sale(
+  id SERIAL primary key,
+  nameBuyer varchar,
+  DNI integer,
+  RUC integer,
+  address varchar,
+  voucher varchar,
+  priceTotal integer,
+  dateSale TIMESTAMP WITH TIME ZONE
+);
+
 
 insert into product(nameProduct,price,stack,productType) values('Caja Metalica',58,2000,'Producto A');
 insert into product(nameProduct,price,stack,productType) values('Pegamento',6,80,'Producto B');
 insert into product(nameProduct,price,stack,productType) values('Fierro de Acero',250,4200,'Producto A');
 insert into product(nameProduct,price,stack,productType) values('Tubos',120,1002,'Producto C');
 select * from product
+
+insert into sale(nameBuyer,DNI,RUC,address,voucher,priceTotal,dateSale)
+values('Maria Sanchez',72545430,1423,'Av Independencia','voucher 1',150,now);
