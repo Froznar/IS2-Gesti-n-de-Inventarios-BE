@@ -41,6 +41,19 @@ Create table product(
  
 );
 
+create table sale_product(
+    id_sale_product SERIAL primary key,
+    id_sale integer,
+    id_producto integer,
+    cantidad integer,
+    precio_unidad numeric (6,2),
+    foreign key (id_product) references product(id_product)
+        on delete no action
+        on update no action,
+    foreign key (id_sale) references sale(id_sale)
+        on delete no action
+        on update no action,
+);
 
 insert into product(nameProduct,price,stack,productType) values('Caja Metalica',58,2000,'Producto A');
 insert into product(nameProduct,price,stack,productType) values('Pegamento',6,80,'Producto B');
