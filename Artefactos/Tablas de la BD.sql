@@ -29,3 +29,21 @@ create table "proveedor"(
 
 insert into "proveedor"(name_proveedor) values('juan');
 
+
+
+/*Clase Producto*/
+Create table product(
+  id SERIAL primary key,
+  nameProduct varchar,
+  price integer,
+  stack integer,
+  productType varchar
+ 
+);
+
+
+insert into product(nameProduct,price,stack,productType) values('Caja Metalica',58,2000,'Producto A');
+insert into product(nameProduct,price,stack,productType) values('Pegamento',6,80,'Producto B');
+insert into product(nameProduct,price,stack,productType) values('Fierro de Acero',250,4200,'Producto A');
+insert into product(nameProduct,price,stack,productType) values('Tubos',120,1002,'Producto C');
+select * from product
