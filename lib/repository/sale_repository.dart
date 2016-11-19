@@ -11,8 +11,8 @@ class SaleRepository {
   SaleRepository(this.connection);
 
   Future<Sale> find(int id) async {
-    Sale product = (await connection.query('SELECT * FROM "sale" WHERE id = @id', {'id': id})).map(mapRowToSale).first;
-    return product;
+    Sale sale = (await connection.query('SELECT * FROM "sale" WHERE id = @id', {'id': id})).map(mapRowToSale).first;
+    return sale;
   }
 
 //General Find Product
