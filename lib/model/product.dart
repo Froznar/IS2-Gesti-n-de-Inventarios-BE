@@ -2,9 +2,10 @@ class Product
 {
   int id;
   String nameProduct;
-  int price;
-  int stack;  /*Cantidad de Productos en Stack*/
-  String productType;
-  /*String receiver;
-  String phone;->>> Son datos de ipo Usuario*/
+  double price;
+  int stock;
+  int grupo;
+  int subgrupo;
+  int codItem; /*TercerParametro del Codigo*/
+  String codigo; /*grupo+subgrupo+codItem*/
 }
