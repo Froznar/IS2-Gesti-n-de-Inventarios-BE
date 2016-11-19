@@ -31,7 +31,7 @@ insert into "proveedor"(name_proveedor) values('juan');
 
 
 
-/*Clase Producto*/
+/*Clase Producto Oficial*/
 Create table product(
   id_product SERIAL primary key,
   name_product varchar,
