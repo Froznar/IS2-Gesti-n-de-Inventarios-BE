@@ -2,7 +2,7 @@ import 'package:di/di.dart';
 
 import 'db_connection.dart';
 import '../repository/user_repository.dart';
-import '../repository/proveedor_repository.dart';
+import '../repository/provider_repository.dart';
 import '../repository/user_product_register_repository.dart';
 import '../repository/user_ventas_repository.dart';
 import '../service/user_service.dart';
@@ -14,9 +14,9 @@ import '../service/user_service.dart';
 import '../service/user_product_register_service.dart';
 import '../service/user_administrator_service.dart';
 
-import '../service/proveedor_service.dart';
+import '../service/provider_service.dart';
 import '../rest/user_rest.dart';
-import '../rest/proveedor_rest.dart';
+import '../rest/provider_rest.dart';
 import '../rest/user_product_register_rest.dart';
 import '../rest/user_administrator_rest.dart';
 import '../rest/hello_rest.dart';
@@ -31,19 +31,19 @@ var injector = new ModuleInjector([new Module()
   ..bind(User_Product_Register_Repository)
   ..bind(UserVentasRepository)
   ..bind(User_Administrator_Repository)
-  ..bind(ProveedorRepository)
+  ..bind(ProviderRepository)
 
   // services
   ..bind(UserService)
   ..bind(User_Product_Register_Service)
   ..bind(UserVentasService)
   ..bind(User_Administrator_Service)
-  ..bind(ProveedorService)
+  ..bind(ProviderService)
 
   // REST controllers
   ..bind(HelloRest)
   ..bind(UserRest)
-  ..bind(ProveedorRest)
+  ..bind(ProviderRest)
   ..bind(User_Product_Register_Rest)
   ..bind(UserVentasRest)
   ..bind(User_Administrator_Rest)
