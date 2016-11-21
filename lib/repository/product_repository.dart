@@ -36,8 +36,7 @@ class ProductRepository
 
 
   /*Agregando Producto Repositorio*/
-  Product mapRowToProduct(pg.Row row)
-  {
+  Product mapRowToProduct(pg.Row row) {
     return new Product()
       ..id = row.id_product
       ..nameProduct = row.name_product
@@ -49,9 +48,7 @@ class ProductRepository
       ..codigo = row.codigo;
   }
 
-  mapRowToString(pg.Row row)
-  {
-    return  String
-    ..nameProduct = row.name_product;
+  String mapRowToString(pg.Row row) {
+    return  row.name_product;
   }
 }
