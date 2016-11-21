@@ -1,6 +1,4 @@
 import 'dart:async';
-import 'package:di/di.dart';
-
 import 'package:postgresql/postgresql.dart' as pg;
 import '../config/db_connection.dart';
 import '../model/product.dart';
@@ -28,6 +26,14 @@ class ProductRepository
         mapRowToProduct).toList();
   }
 
+  //Seleccionar Nombres de Productos
+
+  Future<List<Product>> findProductName()
+  async {
+    return (await connection.query('SELECT name_product FROM "product" ')).map(
+        mapRowToString).toList();
+  }
+
 
   /*Agregando Producto Repositorio*/
   Product mapRowToProduct(pg.Row row)
@@ -43,4 +49,9 @@ class ProductRepository
       ..codigo = row.codigo;
   }
 
+  mapRowToString(pg.Row row)
+  {
+    return  String
+    ..nameProduct = row.name_product;
+  }
 }
