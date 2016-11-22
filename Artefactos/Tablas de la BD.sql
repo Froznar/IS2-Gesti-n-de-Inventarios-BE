@@ -46,7 +46,7 @@ Create table product(
 
 
 Create table sale(
-  id SERIAL primary key,
+  id_sale SERIAL primary key,
   nameBuyer varchar,
   DNI integer,
   RUC integer,
@@ -59,7 +59,7 @@ Create table sale(
 create table sale_product(
     id_sale_product SERIAL primary key,
     id_sale integer,
-    id_producto integer,
+    id_product integer,
     cantidad integer,
     precio_unidad numeric (6,2),
     foreign key (id_product) references product(id_product)
@@ -67,20 +67,20 @@ create table sale_product(
         on update no action,
     foreign key (id_sale) references sale(id_sale)
         on delete no action
-        on update no action,
+        on update no action
 );
 
-insert into product(nameProduct,price,stack,productType) values('Caja Metalica',58,2000,'Producto A');
-insert into product(nameProduct,price,stack,productType) values('Pegamento',6,80,'Producto B');
-insert into product(nameProduct,price,stack,productType) values('Fierro de Acero',250,4200,'Producto A');
-insert into product(nameProduct,price,stack,productType) values('Tubos',120,1002,'Producto C');
+--insert into product(nameProduct,price,stack,productType) values('Caja Metalica',58,2000,'Producto A');
+--insert into product(nameProduct,price,stack,productType) values('Pegamento',6,80,'Producto B');
+--insert into product(nameProduct,price,stack,productType) values('Fierro de Acero',250,4200,'Producto A');
+--insert into product(nameProduct,price,stack,productType) values('Tubos',120,1002,'Producto C');
 
 insert into product(name_product,price,stock,grupo,subgrupo,cod_item,codigo) values('Caja Metalica',58.90,2000,1,3,6589,'01-03-6589');
 insert into product(name_product,price,stock,grupo,subgrupo,cod_item,codigo) values('Pegamento',13.10,2000,2,3,7899,'02-03-7899');
 insert into product(name_product,price,stock,grupo,subgrupo,cod_item,codigo) values('Tubos de Acero',119,2000,1,3,4565,'01-03-4565');
 insert into product(name_product,price,stock,grupo,subgrupo,cod_item,codigo) values('Fierros Cobre',256.78,2000,3,3,1111,'03-03-1111');
 
-select * from product
+--select * from product
 
 insert into sale(nameBuyer,DNI,RUC,address,voucher,priceTotal,dateSale)
-values('Maria Sanchez',72545430,1423,'Av Independencia','voucher 1',150,now);
+values('Maria Sanchez',72545430,1423,'Av Independencia','voucher 1',150,'now');
