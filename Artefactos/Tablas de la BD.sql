@@ -84,3 +84,6 @@ insert into product(name_product,price,stock,grupo,subgrupo,cod_item,codigo) val
 
 insert into sale(nameBuyer,DNI,RUC,address,voucher,priceTotal,dateSale)
 values('Maria Sanchez',72545430,1423,'Av Independencia','voucher 1',150,'now');
+
+insert into sale_product(id_sale, id_product, cantidad, precio_unidad) values (1, 1, 1, 58.90);
+insert into sale_product(id_sale, id_product, cantidad, precio_unidad) values (1, 2, 1, 13.10);
