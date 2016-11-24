@@ -20,5 +20,8 @@ class SaleRest {
     return saleService.getAll();
   }
 
-
+  @ApiMethod(path: 'saleBuyer/{name}')
+  Future<Sale> getSaleBuyer(String name) {
+    return saleService.getSaleBuyer(name);
+  }
 }

@@ -14,5 +14,8 @@ class SaleService {
     return saleRepository.findAll();
   }
 
+  Future<Sale> getSaleBuyer(String name) {
+    return saleRepository.findSaleBuyer(name);
+  }
 
 }

@@ -43,6 +43,8 @@ Create table sale(
 
 insert into sale(name_buyer,dni,ruc,address,voucher,price_total,date_sale)
 values('Maria Sanchez',72545430,1423,'Av Independencia','voucher 1',50,'now');
+insert into sale(name_buyer,dni,ruc,address,voucher,price_total,date_sale)
+values('PatoLucas',787579,1423,'Av Coritos','voucher 1',50,'now');
 select * from sale
 
 /*Clase Producto Oficial*/
