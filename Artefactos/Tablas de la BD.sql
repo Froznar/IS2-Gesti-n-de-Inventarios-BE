@@ -8,6 +8,19 @@
   "password" varchar
 );
 
+CREATE TABLE "Order"(
+    id_order SERIAL primary key,
+    id_provider int,
+    id_client int,
+    id_product int,
+    order_state int,
+    order_date Date 
+)
+
+INSERT INTO "Order"(id_provider,id_client,id_product,order_state,order_date) VALUES (1,2,3,0,'2016-09-02'::DATE);
+
+
+
 
 insert into "user"(first_name,last_name,email,account,user_type,"password") values('javier','marin','algo@gmail.com','paracelso',2,'contraceña');
 insert into "user"(first_name,last_name,email,account,user_type,"password") values('francisco','marin','algo@gmail.com','froznar',1,'contraceña');
