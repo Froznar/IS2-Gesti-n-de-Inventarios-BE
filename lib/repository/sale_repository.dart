@@ -28,7 +28,10 @@ class SaleRepository {
 
 //Insertar Venta
 
-  Future<Sale> registerSale(String name_buyer,int dni, int ruc,String address,String voucher, int price_total,DateTime date_sale ) async{
+  Future<Sale> registerSale(String name_buyer,String dni1, String ruc1,String address,String voucher, String price_total1,String date_sale) async{
+    int dni=int.parse(dni1);
+    int ruc=int.parse(ruc1);
+    int price_total=int.parse(price_total1);
     await connection.query('INSERT INTO "sale" (name_buyer,dni,ruc,address,voucher,price_total,date_sale) values (@name_buyer,@dni,@ruc,@address,@voucher,@price_total,@date_sale)', {'name_buyer':name_buyer,'dni':dni ,'ruc':ruc, 'address':address, 'voucher':voucher, 'price_total':price_total,'date_sale':date_sale});
     return findSaleBuyer(name_buyer);
   }

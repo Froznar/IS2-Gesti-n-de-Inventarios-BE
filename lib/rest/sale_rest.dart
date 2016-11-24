@@ -24,4 +24,10 @@ class SaleRest {
   Future<Sale> getSaleBuyer(String name) {
     return saleService.getSaleBuyer(name);
   }
+
+  /*Manera de insertar localhost:9090/sale/v1/saleInsert/SuperMan-123456-987654-Springfield-voucher2-185-now*/
+  @ApiMethod(path: 'saleInsert/{data}')
+  Future<Sale> insertSale(String data) {
+    return saleService.setSale(data);
+  }
 }
