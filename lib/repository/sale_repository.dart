@@ -14,7 +14,7 @@ class SaleRepository {
   SaleRepository(this.connection, this.productRepository);
 
   Future<Sale> find(int id) async {
-    Sale sale = (await connection.query('SELECT * FROM "sale" WHERE id_sale = @id;', {'id': id})).map(mapRowToSale2).first;
+    Sale sale = (await connection.query('SELECT * FROM "sale" WHERE id_sale = @id;', {'id': id})).map(mapRowToSale).first;
     /*List<int> ids = (await connection.query('select id_product from sale_product where id_sale = @id_sale;', {'id_sale': id})).map(mapRowToInt).toList();
     for(int i = 0; i < ids.length; i++){
       //Product p;
@@ -23,15 +23,19 @@ class SaleRepository {
     }*/
     return sale;
   }
+  Future<Sale2> find2(int id) async {
+    Sale2 sale = (await connection.query('SELECT * FROM "sale" WHERE id_sale = @id;', {'id': id})).map(mapRowToSale2).first;
+    return sale;
+  }
 //General Find Product
   Future<List<Sale>> findAll() async {
     //return (await connection.query('SELECT * FROM "sale" ')).map(mapRowToSale).toList();
-    return (await connection.query('SELECT * FROM "sale";')).map(mapRowToSale2).toList();
+    return (await connection.query('SELECT * FROM "sale";')).map(mapRowToSale).toList();
   }
   /*Future<List<Sale>> findByRangeDate(DateTime initialDate, DateTime finalDate) async {
   }*/
-  Future<List<Product>> findProductsByIdSale(int id) async {//funcion para encontrar lps productos en una determinada venta
-    List<Product> list;
+  Future<List<Product>> findProductsByIdSale(int id) async {//funcion para encontrar lps productos en una determinada venta, no sera necesaria
+    List<Product> list = new List<Product> ();
     List<int> ids = (await connection.query('select id_product from "sale_product" where id_sale = @id_sale;', {'id_sale': id})).map(mapRowToInt).toList();
       for(int i = 0; i < ids.length; i++){
       //Product p;
@@ -67,9 +71,9 @@ class SaleRepository {
     findProductsByIdSale(s.id).then((List<Product> lista){s.listProduct = lista;});
     return s;
   }
-
+  
   int mapRowToInt(pg.Row row){
-    return int.parse(row.id_product);
+    return row.id_product;
   }
 }
 
