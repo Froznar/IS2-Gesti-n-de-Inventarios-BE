@@ -20,6 +20,7 @@ class ProviderRest {
     return providerService.get_name(name);
   }
 
+/*Manera de insertar /dato1-dato2-dato3-dato4-dato5 cada dato separado por guiones*/
   @ApiMethod(path: 'provider/insert/{data}')
   Future<Provider> insertProvider(String data) {
     return providerService.insert(data);
