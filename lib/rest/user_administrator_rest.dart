@@ -20,8 +20,8 @@ class User_Administrator_Rest {
     return user_administrator_service.getAll();
   }
 
-  @ApiMethod(path: 'user_administrator/email/{email}')
-  Future<List<User>> getAdminEmail(String email) {
-    return user_administrator_service.getEmail(email);
-  }
+//  @ApiMethod(path: 'user_administrator/email/{email}')
+//  Future<List<User>> getAdminEmail(String email) {
+//    return user_administrator_service.getEmail(email);
+//  }
 }

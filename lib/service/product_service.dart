@@ -14,8 +14,8 @@ class ProductService {
     return productRepository.findAll();
   }
 
-  Future<List<Product>> getProductName() {
-      return productRepository.findProductName();
-    }
+  Future<Product> getProductName(String name) {
+    return productRepository.findProductName(name);
+  }
 
 }

@@ -28,10 +28,10 @@ class ProductRepository
 
   //Seleccionar Nombres de Productos
 
-  Future<List<Product>> findProductName()
+  Future<Product> findProductName(String name)
   async {
-    return (await connection.query('SELECT name_product FROM "product" ')).map(
-        mapRowToString).toList();
+    Product product=(await connection.query('SELECT * FROM "product" WHERE name_product = @name', {'name':name})).map (mapRowToProduct).first;
+    return product;
   }
 
 

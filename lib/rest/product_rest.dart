@@ -20,11 +20,9 @@ class ProductRest {
     return productService.getAll();
   }
 
-  @ApiMethod(path: 'productName')
-  Future<List<Product>> getAllProductName() {
-    return productService.getProductName();
+  @ApiMethod(path: 'productName/{name}')
+  Future<Product> getAllProductName(String name) {
+    return productService.getProductName(name);
   }
-
-
 
 }
