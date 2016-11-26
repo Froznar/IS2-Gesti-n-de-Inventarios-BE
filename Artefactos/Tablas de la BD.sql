@@ -27,5 +27,24 @@ create table "proveedor"(
   name_proveedor varchar
 );
 
+create table "almacen" (
+    id_almacen SERIAL primary key,
+    name_almacen varchar,
+    map varchar,
+);
+
+create table "producto"(
+    id_producto SERIAL primary key,
+    name_producto varchar,
+    codigo integer,
+    costo_unitario integer,
+    grupo varchar,
+    subgrupo varchar,
+    tiempo_demora_entrega integer,
+    ubicacion_en_almacen varchar,
+    id_almacen integer,
+    FOREIGN KEY (id_almacen) REFERENCES "almacen"(id_almacen)
+);
+
 insert into "proveedor"(name_proveedor) values('juan');
 
