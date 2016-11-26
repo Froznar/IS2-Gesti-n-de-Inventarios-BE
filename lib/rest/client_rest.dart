@@ -9,13 +9,24 @@ class ClientRest {
 
   ClientRest(this.clientService);
 
-  @ApiMethod(path: 'client/{id}')
-  Future<Client> getUser(String id) {
-    return clientService.get(int.parse(id));
+  @ApiMethod(path: 'client/{type}')
+  Future<Client> getClient(String type) {
+    return clientService.get(int.parse(type));
   }
 
   @ApiMethod(path: 'all')
-  Future<List<Client>> getUsers() {
+  Future<List<Client>> getClients() {
     return clientService.getAll();
+  }
+
+  @ApiMethod(path: 'clientName/{name}')
+  Future<Client> getClientName(String name) {
+    return clientService.getClientName(name);
+  }
+
+  /*Manera de insertar http://localhost:9090/client/v1/clientInsert/juanita-loza-123456-987654-0*/
+  @ApiMethod(path: 'clientInsert/{data}')
+  Future<Client> insertClient(String data) {
+    return clientService.setClient(data);
   }
 }
