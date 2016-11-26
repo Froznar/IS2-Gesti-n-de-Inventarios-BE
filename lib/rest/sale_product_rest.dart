@@ -26,7 +26,7 @@ class SaleProductRest{
 
     /*Manera de insertar localhost:9090/sale_product/v1/sale_product_insert/2-1-5-13.10*/
     @ApiMethod(path: 'sale_product_insert/{data}')
-    Future<bool> insertSale(String data) {
+    Future<SaleProduct> insertSale(String data) {
         return saleProductService.setSaleProduct(data);
     }
 }

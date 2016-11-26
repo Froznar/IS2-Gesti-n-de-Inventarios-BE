@@ -19,11 +19,15 @@ class SaleProductRepository{
         return list;
     }
 
-    Future<bool> registerSaleProduct(String id_sale, String id_product, String cantidadS, String price_unitS) async{
+    Future<SaleProduct> findByIdSaleAndIdProduct (int id_sale, int id_product) async {//buscar unregistro por id_ sale e id_product
+        return (await connection.query('select * from sale_product where id_sale = @id_sale and id_product = @id_product;', {'id_sale': id_sale, 'id_product': id_product})).map(mapRowToSaleProduct).first;
+    }
+
+    Future<SaleProduct> registerSaleProduct(String id_sale, String id_product, String cantidadS, String price_unitS) async{
         int cantidad=int.parse(cantidadS);
         double price_unit = double.parse(price_unitS);
         await connection.query('insert into sale_product (id_sale, id_product, cantidad, precio_unidad) values (@id_sale, @id_product, @cantidad, @precio_unidad)', {'id_sale':id_sale,'id_product':id_product ,'cantidad':cantidad, 'precio_unidad':price_unit});
-        return true;
+        return findByIdSaleAndIdProduct(int.parse(id_sale), int.parse(id_product));
     }
 
     SaleProduct mapRowToSaleProduct(pg.Row row){

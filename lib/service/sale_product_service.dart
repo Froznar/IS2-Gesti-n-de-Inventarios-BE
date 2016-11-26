@@ -18,7 +18,7 @@ class SaleProductService{
         return saleProductRepository.findByIdSale(id_sale);
     }
 
-    Future<bool> setSaleProduct(String data) {
+    Future<SaleProduct> setSaleProduct(String data) {
         List<String> new_data = data.split("-");
         if(new_data.length == 4){
             return saleProductRepository.registerSaleProduct(new_data[0],new_data[1],new_data[2],new_data[3]);
