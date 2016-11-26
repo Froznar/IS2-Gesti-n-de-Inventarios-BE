@@ -23,10 +23,10 @@ class SaleRepository {
     }*/
     return sale;
   }
-  Future<Sale2> find2(int id) async {
+  /*Future<Sale2> find2(int id) async {
     Sale2 sale = (await connection.query('SELECT * FROM "sale" WHERE id_sale = @id;', {'id': id})).map(mapRowToSale2).first;
     return sale;
-  }
+  }*/
 //General Find Product
   Future<List<Sale>> findAll() async {
     //return (await connection.query('SELECT * FROM "sale" ')).map(mapRowToSale).toList();
@@ -58,7 +58,7 @@ class SaleRepository {
 
   }
 
-  Sale mapRowToSale2(pg.Row row) {
+  /*Sale mapRowToSale2(pg.Row row) {//util si queria que conserve las relaciones esten en la propia clase sale
     Sale s = new Sale()
       ..id = row.id_sale
       ..nameBuyer = row.namebuyer
@@ -70,7 +70,7 @@ class SaleRepository {
       ..dateSale =row.datesale;
     findProductsByIdSale(s.id).then((List<Product> lista){s.listProduct = lista;});
     return s;
-  }
+  }*/
   
   int mapRowToInt(pg.Row row){
     return row.id_product;
