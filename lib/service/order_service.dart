@@ -34,6 +34,14 @@ class OrderService {
     return orderRepository.findPendingByMonthEnd(month);
   }  
 
+  Future<List<Order>> getReceivedOnTime(){
+    return orderRepository.findReceivedOnTime();
+  }   
+
+  Future<List<Order>> getReceivedLate(){
+    return orderRepository.findReceivedLate();
+  }   
+  
   Future<List<Order>> getAll() {
     return orderRepository.findAll();
   }

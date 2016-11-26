@@ -45,6 +45,16 @@ class OrderRest {
     return orderService.getPendingByMonthEnd(int.parse(month));
   }  
   
+  @ApiMethod(path: 'order/received/ontime')
+  Future<List<Order>> getReceivedOrderOnTime(){
+    return orderService.getReceivedOnTime();
+  }    
+
+  @ApiMethod(path: 'order/received/late')
+  Future<List<Order>> getReceivedOrderLate(){
+    return orderService.getReceivedLate();
+  }  
+  
   @ApiMethod(path: 'all')
   Future<List<Order>> getOrders() {
     return orderService.getAll();

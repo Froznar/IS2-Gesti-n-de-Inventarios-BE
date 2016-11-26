@@ -47,6 +47,16 @@ class OrderRepository {
     return order;
   }
 
+  Future<List<Order>> findReceivedOnTime() async {
+    List<Order> order = (await connection.query('SELECT * FROM "Order" WHERE order_state = 3')).map(mapRowToOrder).toList();
+    return order;
+  } 
+
+  Future<List<Order>> findReceivedLate() async {
+    List<Order> order = (await connection.query('SELECT * FROM "Order" WHERE order_state = 4')).map(mapRowToOrder).toList();
+    return order;
+  }   	
+  
   Future<List<Order>> findAll() async {
     return (await connection.query('SELECT * FROM "Order"')).map(mapRowToOrder).toList();
   }

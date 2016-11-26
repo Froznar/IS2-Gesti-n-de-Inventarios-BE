@@ -24,7 +24,9 @@ INSERT INTO "Order"(id_provider,id_client,id_product,order_state,order_date) VAL
 
 INSERT INTO "Order"(id_provider,id_client,id_product,order_state,order_date) VALUES (3,3,2,2,'2016-02-02'::DATE);
 
+INSERT INTO "Order"(id_provider,id_client,id_product,order_state,order_date) VALUES (3,3,2,3,'2016-02-02'::DATE);
 
+INSERT INTO "Order"(id_provider,id_client,id_product,order_state,order_date) VALUES (1,1,1,4,'2016-02-02'::DATE);
 
 
 
