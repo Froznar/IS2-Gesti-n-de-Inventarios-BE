@@ -7,8 +7,8 @@ class SaleProductRepository{
     DbConnection connection;
     SaleProductRepository(this.connection);
     Future<SaleProduct> find(int id) async {
-        SaleProduct sp = (await connection.query('select * from sale_product where id_sale_product = @id;', {'id': id})).map(mapRowToSaleProduct).first();
-        return sp;
+        SaleProduct saleProduct = (await connection.query('select * from sale_product where id_sale_product = @id;', {'id': id})).map(mapRowToSaleProduct).first();
+        return saleProduct;
     }
 
     Future<List<SaleProduct>> findAll () async {
@@ -26,6 +26,6 @@ class SaleProductRepository{
             ..id_sale = row.id_sale
             ..id_product = row.id_product
             ..cantidad = row.cantidad
-            ..priceUnit = row.priceUnit;
+            ..priceUnit = double.parse(row.precio_unidad);
     }
 }
