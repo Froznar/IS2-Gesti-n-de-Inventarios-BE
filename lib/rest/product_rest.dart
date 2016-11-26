@@ -24,4 +24,10 @@ class ProductRest {
   Future<Product> getAllProductName(String name) {
     return productService.getProductName(name);
   }
+
+  /*Manera de insertar localhost:9090/product/v1/product_insert/Pintura-15.90-5-1-1-23-1123*/
+  @ApiMethod(path: 'product_insert/{data}')
+  Future<Product> insertProduct(String data) {
+    return productService.setProduct(data);
+  }
 }
