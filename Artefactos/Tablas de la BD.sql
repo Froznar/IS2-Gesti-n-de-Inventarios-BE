@@ -15,9 +15,15 @@ CREATE TABLE "Order"(
     id_product int,
     order_state int,
     order_date Date 
-)
+);
 
 INSERT INTO "Order"(id_provider,id_client,id_product,order_state,order_date) VALUES (1,2,3,0,'2016-09-02'::DATE);
+INSERT INTO "Order"(id_provider,id_client,id_product,order_state,order_date) VALUES (2,2,1,1,'2016-10-06'::DATE);
+
+INSERT INTO "Order"(id_provider,id_client,id_product,order_state,order_date) VALUES (2,3,4,2,'2016-02-27'::DATE);
+
+INSERT INTO "Order"(id_provider,id_client,id_product,order_state,order_date) VALUES (3,3,2,2,'2016-02-02'::DATE);
+
 
 
 
