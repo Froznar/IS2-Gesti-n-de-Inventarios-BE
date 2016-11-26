@@ -5,7 +5,7 @@ import 'package:rpc/rpc.dart';
 import 'package:logistic_app/config/injector.dart';
 import 'package:logistic_app/rest/user_rest.dart';
 import 'package:logistic_app/rest/user_ventas_rest.dart';
-import 'package:logistic_app/rest/proveedor_rest.dart';
+import 'package:logistic_app/rest/provider_rest.dart';
 import 'package:logistic_app/rest/user_product_register_rest.dart';
 import 'package:logistic_app/rest/user_administrator_rest.dart';
 import 'package:logistic_app/rest/product_rest.dart';
@@ -66,7 +66,7 @@ Future configureHttpServer(HttpRequest request) async {
 main() async {
   _apiServer.addApi(injector.get(UserRest));
   _apiServer.addApi(injector.get(UserVentasRest));
-  _apiServer.addApi(injector.get(ProveedorRest));
+  _apiServer.addApi(injector.get(ProviderRest));
   _apiServer.addApi(injector.get(User_Product_Register_Rest));
   _apiServer.addApi(injector.get(User_Administrator_Rest));
   _apiServer.addApi(injector.get(ProductRest));
