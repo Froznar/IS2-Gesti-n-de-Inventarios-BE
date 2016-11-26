@@ -19,6 +19,11 @@ class SaleProductRepository{
         return list;
     }
 
+    Future<List<SaleProduct>> findByIdProduct (int id_product) async {//obtener todas las sales_product de una venta
+        List<SaleProduct> list = (await connection.query('select * from sale_product where id_product = @id_product;', {'id_product': id_product})).map(mapRowToSaleProduct).toList();
+        return list;
+    }
+
     Future<SaleProduct> findByIdSaleAndIdProduct (int id_sale, int id_product) async {//buscar unregistro por id_ sale e id_product
         return (await connection.query('select * from sale_product where id_sale = @id_sale and id_product = @id_product;', {'id_sale': id_sale, 'id_product': id_product})).map(mapRowToSaleProduct).first;
     }

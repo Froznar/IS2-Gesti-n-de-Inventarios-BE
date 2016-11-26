@@ -18,6 +18,10 @@ class SaleProductService{
         return saleProductRepository.findByIdSale(id_sale);
     }
 
+    Future<List<SaleProduct>> getByProduct(int id_product){
+        return saleProductRepository.findByIdSale(id_product);
+    }
+
     Future<SaleProduct> setSaleProduct(String data) {
         List<String> new_data = data.split("-");
         if(new_data.length == 4){
