@@ -10,6 +10,8 @@ import '../repository/product_repository.dart';
 import '../repository/sale_repository.dart';
 import '../repository/sale_product_repository.dart';
 import '../repository/order_repository.dart';
+import '../repository/client_repository.dart';
+
 
 import '../service/user_service.dart';
 import '../service/order_service.dart';
@@ -20,6 +22,7 @@ import '../service/proveedor_service.dart';
 import '../service/product_service.dart';
 import '../service/sale_service.dart';
 import '../service/sale_product_service.dart';
+import '../service/client_service.dart';
 
 
 import '../rest/user_rest.dart';
@@ -32,6 +35,7 @@ import '../rest/user_ventas_rest.dart';
 import '../rest/product_rest.dart';
 import '../rest/sale_rest.dart';
 import '../rest/sale_product_rest.dart';
+import '../rest/client_rest.dart';
 
 
 var injector = new ModuleInjector([new Module()
@@ -48,6 +52,8 @@ var injector = new ModuleInjector([new Module()
   ..bind(SaleRepository)
   ..bind(SaleProductRepository)
   ..bind(OrderRepository)
+  ..bind(ClientRepository)
+
 
 // services
   ..bind(UserService)
@@ -59,6 +65,7 @@ var injector = new ModuleInjector([new Module()
   ..bind(SaleService)
   ..bind(SaleProductService)
   ..bind(OrderService)
+  ..bind(ClientService)
 
 // REST controllers
   ..bind(HelloRest)
@@ -71,4 +78,6 @@ var injector = new ModuleInjector([new Module()
   ..bind(SaleRest)
   ..bind(SaleProductRest)
   ..bind(OrderRest)
+  ..bind(ClientRest)
+
 ]);
