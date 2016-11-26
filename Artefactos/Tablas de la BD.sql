@@ -17,6 +17,21 @@ CREATE TABLE "Order"(
     order_date Date 
 );
 
+
+
+CREATE TABLE OrderState(
+    id_order_state int,
+    descripcion TEXT 
+);
+
+INSERT INTO OrderState VALUES(0,'Enviado');
+INSERT INTO OrderState VALUES(1,'Recibido');
+INSERT INTO OrderState VALUES(2,'Pendiente');
+INSERT INTO OrderState VALUES(3,'Recibido a tiempo');
+INSERT INTO OrderState VALUES(4,'Recibido Tarde');
+
+
+
 INSERT INTO "Order"(id_provider,id_client,id_product,order_state,order_date) VALUES (1,2,3,0,'2016-09-02'::DATE);
 INSERT INTO "Order"(id_provider,id_client,id_product,order_state,order_date) VALUES (2,2,1,1,'2016-10-06'::DATE);
 
