@@ -42,7 +42,7 @@ class SaleRepository {
       productRepository.find(ids[i]).then((Product p) {list.add(p);});
       //sale.listProduct.add(p);
     }
-    return list;//despues debo convertir este future en uno normal
+    return list;
   }
 
   Sale mapRowToSale(pg.Row row) {
