@@ -19,6 +19,13 @@ class SaleProductRepository{
         return list;
     }
 
+    Future<bool> registerSaleProduct(String id_sale, String id_product, String cantidadS, String price_unitS) async{
+        int cantidad=int.parse(cantidadS);
+        double price_unit = double.parse(price_unitS);
+        await connection.query('insert into sale_product (id_sale, id_product, cantidad, precio_unidad) values (@id_sale, @id_product, @cantidad, @precio_unidad)', {'id_sale':id_sale,'id_product':id_product ,'cantidad':cantidad, 'precio_unidad':price_unit});
+        return true;
+    }
+
     SaleProduct mapRowToSaleProduct(pg.Row row){
         return new SaleProduct()
             ..id_sale_product = row.id_sale_product

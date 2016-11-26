@@ -13,7 +13,15 @@ class SaleProductService{
     Future<List<SaleProduct>> getAll(){
         return saleProductRepository.findAll();
     }
+
     Future<List<SaleProduct>> getBySale(int id_sale){
         return saleProductRepository.findByIdSale(id_sale);
+    }
+
+    Future<bool> setSaleProduct(String data) {
+        List<String> new_data = data.split("-");
+        if(new_data.length == 4){
+            return saleProductRepository.registerSaleProduct(new_data[0],new_data[1],new_data[2],new_data[3]);
+        }
     }
 }
