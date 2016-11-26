@@ -19,7 +19,7 @@ class AlmacenRepository {
     return (await connection.query('SELECT * FROM "almacen" ')).map(mapRowToProveedor).toList();
   }
 
-  Proveedor mapRowToProveedor(pg.Row row) {
+  Almacen mapRowToProveedor(pg.Row row) {
     return new Almacen()
       ..id_almacen = row.id_almacen
       ..name_almacen = row.name_almacen
