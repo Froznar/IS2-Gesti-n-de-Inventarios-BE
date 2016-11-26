@@ -1,3 +1,4 @@
+
 import 'package:di/di.dart';
 
 import 'db_connection.dart';
@@ -6,9 +7,11 @@ import '../repository/provider_repository.dart';
 import '../repository/user_product_register_repository.dart';
 import '../repository/user_ventas_repository.dart';
 import '../service/user_service.dart';
+import '../service/order_service.dart';
 import '../service/user_product_register_service.dart';
 import '../service/user_ventas_service.dart';
 import '../repository/user_administrator_repository.dart';
+import '../repository/order_repository.dart';
 
 import '../service/user_service.dart';
 import '../service/user_product_register_service.dart';
@@ -40,6 +43,7 @@ var injector = new ModuleInjector([new Module()
   ..bind(User_Administrator_Service)
   ..bind(ProviderService)
 
+
   // REST controllers
   ..bind(HelloRest)
   ..bind(UserRest)
@@ -47,4 +51,5 @@ var injector = new ModuleInjector([new Module()
   ..bind(User_Product_Register_Rest)
   ..bind(UserVentasRest)
   ..bind(User_Administrator_Rest)
+  ..bind(OrderRest)
 ]);
