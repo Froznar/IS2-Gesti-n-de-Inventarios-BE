@@ -73,7 +73,7 @@ main() async {
   _apiServer.addApi(injector.get(ProductRest));
   _apiServer.addApi(injector.get(SaleRest));
   _apiServer.addApi(injector.get(SaleProductRest));
-  HttpServer server = await HttpServer.bind(InternetAddress.ANY_IP_V4, 63321);//correr con dart main.dart
+  HttpServer server = await HttpServer.bind(InternetAddress.ANY_IP_V4, 9090);//correr con dart main.dart
   //server.listen(_apiServer.httpRequestHandler);
   server.listen(configureHttpServer);
 }
