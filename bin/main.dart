@@ -9,6 +9,9 @@ import 'package:logistic_app/rest/proveedor_rest.dart';
 import 'package:logistic_app/rest/user_product_register_rest.dart';
 import 'package:logistic_app/rest/user_administrator_rest.dart';
 import 'package:logistic_app/rest/hello_rest.dart';
+import 'package:logistic_app/rest/product_rest.dart';
+import 'package:logistic_app/rest/sale_rest.dart';
+import 'package:logistic_app/rest/sale_product_rest.dart';
 import 'package:logistic_app/rest/order_rest.dart';
 
 final ApiServer _apiServer = new ApiServer();
@@ -67,6 +70,9 @@ main() async {
   _apiServer.addApi(injector.get(User_Product_Register_Rest));
   _apiServer.addApi(injector.get(User_Administrator_Rest));
   _apiServer.addApi(injector.get(HelloRest));
+  _apiServer.addApi(injector.get(ProductRest));
+  _apiServer.addApi(injector.get(SaleRest));
+  _apiServer.addApi(injector.get(SaleProductRest));
   _apiServer.addApi(injector.get(OrderRest));
   HttpServer server = await HttpServer.bind(InternetAddress.ANY_IP_V4, 9090);
 //  server.listen(_apiServer.httpRequestHandler);
