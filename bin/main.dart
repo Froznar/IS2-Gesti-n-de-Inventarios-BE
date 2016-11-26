@@ -12,7 +12,7 @@ import 'package:logistic_app/rest/hello_rest.dart';
 import 'package:logistic_app/rest/product_rest.dart';
 import 'package:logistic_app/rest/sale_rest.dart';
 import 'package:logistic_app/rest/sale_product_rest.dart';
-
+import 'package:logistic_app/rest/order_rest.dart';
 
 final ApiServer _apiServer = new ApiServer();
 
@@ -73,7 +73,8 @@ main() async {
   _apiServer.addApi(injector.get(ProductRest));
   _apiServer.addApi(injector.get(SaleRest));
   _apiServer.addApi(injector.get(SaleProductRest));
-  HttpServer server = await HttpServer.bind(InternetAddress.ANY_IP_V4, 9090);//correr con dart main.dart
-  //server.listen(_apiServer.httpRequestHandler);
+  _apiServer.addApi(injector.get(OrderRest));
+  HttpServer server = await HttpServer.bind(InternetAddress.ANY_IP_V4, 9090);
+//  server.listen(_apiServer.httpRequestHandler);
   server.listen(configureHttpServer);
 }
