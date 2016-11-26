@@ -49,7 +49,7 @@ insert into sale(name_buyer,dni,ruc,address,voucher,price_total,date_sale)
 values('Maria Sanchez',72545430,1423,'Av Independencia','voucher 1',50,'now');
 insert into sale(name_buyer,dni,ruc,address,voucher,price_total,date_sale)
 values('PatoLucas',787579,1423,'Av Coritos','voucher 1',50,'now');
-select * from sale
+--select * from sale;
 
 /*Clase Producto Oficial*/
 Create table product(
@@ -61,8 +61,8 @@ Create table product(
   subgrupo integer,
   cod_item integer,
   codigo varchar
-
 );
+
 insert into product(name_product,price,stock,grupo,subgrupo,cod_item,codigo) values('CajaMetalica',58.90,2000,1,3,6589,'01-03-6589');
 insert into product(name_product,price,stock,grupo,subgrupo,cod_item,codigo) values('Pegamento',13.10,2000,2,3,7899,'02-03-7899');
 insert into product(name_product,price,stock,grupo,subgrupo,cod_item,codigo) values('Tubos',119,2000,1,3,4565,'01-03-4565');
