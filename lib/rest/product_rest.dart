@@ -24,7 +24,4 @@ class ProductRest {
   Future<Product> getAllProductName(String name) {
     return productService.getProductName(name);
   }
-
-
-
 }

@@ -36,6 +36,8 @@ class SaleRepository {
     return findSaleBuyer(name_buyer);
   }
 
+  /*Future<List<Sale>> findByRangeDate(DateTime initialDate, DateTime finalDate) async {
+  }*/
 
   Sale mapRowToSale(pg.Row row) {
     return new Sale()
@@ -46,7 +48,6 @@ class SaleRepository {
       ..address = row.address
       ..voucher = row.voucher
       ..priceTotal = row.price_total
-      ..dateSale=row.date_sale;
-
+      ..dateSale = row.date_sale;
   }
 }

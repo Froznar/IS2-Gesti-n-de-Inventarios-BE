@@ -17,5 +17,4 @@ class ProductService {
   Future<Product> getProductName(String name) {
     return productRepository.findProductName(name);
   }
-
 }

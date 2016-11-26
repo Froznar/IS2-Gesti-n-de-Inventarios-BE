@@ -2,24 +2,19 @@ import '../repository/sale_repository.dart';
 import '../model/sale.dart';
 import 'dart:async';
 
-class SaleService
-{
+class SaleService {
   SaleRepository saleRepository;
-
   SaleService(this.saleRepository);
 
-  Future<Sale> get(int id)
-  {
+  Future<Sale> get(int id) {
     return saleRepository.find(id);
   }
 
-  Future<List<Sale>> getAll()
-  {
+  Future<List<Sale>> getAll() {
     return saleRepository.findAll();
   }
 
-  Future<Sale> getSaleBuyer(String name)
-  {
+  Future<Sale> getSaleBuyer(String name) {
     return saleRepository.findSaleBuyer(name);
   }
 
@@ -34,10 +29,5 @@ class SaleService
       new_data[b]=new_data[b]+data[a];
     }
     return saleRepository.registerSale(new_data[0],new_data[1],new_data[2],new_data[3],new_data[4],new_data[5],new_data[6]);
-
   }
-
 }
-
-
-

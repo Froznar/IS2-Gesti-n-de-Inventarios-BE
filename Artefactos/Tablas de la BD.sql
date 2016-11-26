@@ -8,15 +8,19 @@
   "password" varchar
 );
 
+CREATE TABLE "Order"(
+    id_order SERIAL primary key,
+    id_provider int,
+    id_client int,
+    id_product int,
+    order_state int,
+    order_date Date 
+)
+
+INSERT INTO "Order"(id_provider,id_client,id_product,order_state,order_date) VALUES (1,2,3,0,'2016-09-02'::DATE);
 
 insert into "user"(first_name,last_name,email,account,user_type,"password") values('javier','marin','algo@gmail.com','paracelso',2,'contraceña');
 insert into "user"(first_name,last_name,email,account,user_type,"password") values('francisco','marin','algo@gmail.com','froznar',1,'contraceña');
-
-
-
-insert into "user"(first_name,last_name,email,account,user_type,"password") values('javier','marin','algo@gmail.com','paracelso',2,'contraceña');
-insert into "user"(first_name,last_name,email,account,user_type,"password") values('francisco','marin','algo@gmail.com','froznar',1,'contraceña');
-
 insert into "user"(first_name,last_name,email,account,user_type,"password") values('Darth','Vader','darth@gmail.com','ucsp',3,'pass');
 insert into "user"(first_name,last_name,email,account,user_type,"password") values('Paula','','paula@gmail.com','ucsp',3,'pass');
 insert into "user"(first_name,last_name,email,account,user_type,"password") values('Vanessa','Santillana','vs@gmail.com','ucsp',4,'pasword');
@@ -64,3 +68,19 @@ insert into product(name_product,price,stock,grupo,subgrupo,cod_item,codigo) val
 insert into product(name_product,price,stock,grupo,subgrupo,cod_item,codigo) values('Tubos',119,2000,1,3,4565,'01-03-4565');
 insert into product(name_product,price,stock,grupo,subgrupo,cod_item,codigo) values('Fierros',256.78,2000,3,3,1111,'03-03-1111');
 
+create table sale_product(
+    id_sale_product SERIAL primary key,
+    id_sale integer,
+    id_product integer,
+    cantidad integer,
+    precio_unidad numeric (6,2),
+    foreign key (id_product) references product(id_product)
+        on delete no action
+        on update no action,
+    foreign key (id_sale) references sale(id_sale)
+        on delete no action
+        on update no action
+);
+
+insert into sale_product(id_sale, id_product, cantidad, precio_unidad) values (1, 1, 1, 58.90);
+insert into sale_product(id_sale, id_product, cantidad, precio_unidad) values (1, 2, 1, 13.10);
