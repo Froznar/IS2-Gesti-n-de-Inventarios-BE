@@ -6,6 +6,10 @@ class DbConnection {
   static final String username = "nacho";
   static final String password = "123456";
   static final String database = "software";
+  /*
+  static final String username = "postgres";
+  static final String password = "ucsp";
+  static final String database = "Gestion_inventarios";*/
   static final int port = 5432;
   static final String URI = 'postgres://$username:$password@$hostname:$port/$database';
 
