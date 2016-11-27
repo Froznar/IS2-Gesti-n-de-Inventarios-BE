@@ -7,7 +7,6 @@ class ProductTypeService {
   ProductTypeService(this.productTypeRepository);
 
   Future<ProductType> get(int id) {
-      print("Estoy en servide");
       return productTypeRepository.find(id);
   }
 

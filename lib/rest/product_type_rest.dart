@@ -12,7 +12,6 @@ class ProductTypeRest {
 
   @ApiMethod(path: 'product_type/{id}')
   Future<ProductType> getProductType(String id) {
-  		     print("pase nash");
     return productTypeService.get(int.parse(id));
   }
   

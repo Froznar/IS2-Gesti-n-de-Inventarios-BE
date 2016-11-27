@@ -9,6 +9,4 @@ class Product
   int subgrupo;
   int codItem; 
   String codigo; 
-  int codItem; /*TercerParametro del Codigo*/
-  String codigo; /*grupo+subgrupo+codItem*/
 }
