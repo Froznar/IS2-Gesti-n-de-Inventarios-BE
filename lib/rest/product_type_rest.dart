@@ -2,7 +2,7 @@ import 'dart:async';
 import 'package:rpc/rpc.dart';
 
 import '../service/product_type_service.dart';
-import '../model/type_product.dart';
+import '../model/product_type.dart';
 
 @ApiClass(name: 'product_type', version: 'v1', description: 'User server side API')
 class ProductTypeRest {

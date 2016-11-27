@@ -7,7 +7,6 @@ import '../model/provider.dart';
 
 class ProviderRepository {
   DbConnection connection;
-
   ProviderRepository(this.connection);
 
   Future<Provider> find(int id) async {

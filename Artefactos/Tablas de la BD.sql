@@ -61,10 +61,10 @@ create table product(
 
 insert into product(name_product,price,stock,grupo,subgrupo,cod_item,codigo) values('Caja Metalica',58.90,2000,1,3,6589,'01-03-6589');
 
-create table type_product(
-       id_type_product SERIAL primary key,
-       type_name varchar,
+create table product_type(
+       id_product_type SERIAL primary key,
+       name_product_type varchar,
        description varchar
 );
 
-insert into type_product(type_name,description) values ('construccion','Materiales que seran usados para la construccion, por ejemplo cemento, metales y demas');
+insert into product_type(name_product_type,description) values ('construccion','Materiales que seran usados para la construccion, por ejemplo cemento, metales y demas');

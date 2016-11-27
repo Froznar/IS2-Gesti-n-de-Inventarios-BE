@@ -6,18 +6,20 @@ import '../repository/user_repository.dart';
 import '../repository/provider_repository.dart';
 import '../repository/user_product_register_repository.dart';
 import '../repository/user_ventas_repository.dart';
+import '../repository/user_administrator_repository.dart';
+import '../repository/order_repository.dart';
+import '../repository/product_type_repository.dart';
+
 import '../service/user_service.dart';
 import '../service/order_service.dart';
 import '../service/user_product_register_service.dart';
 import '../service/user_ventas_service.dart';
-import '../repository/user_administrator_repository.dart';
-import '../repository/order_repository.dart';
-
 import '../service/user_service.dart';
 import '../service/user_product_register_service.dart';
 import '../service/user_administrator_service.dart';
-
 import '../service/provider_service.dart';
+import '../service/product_type_service.dart';
+
 import '../rest/user_rest.dart';
 import '../rest/provider_rest.dart';
 import '../rest/user_product_register_rest.dart';
@@ -25,6 +27,8 @@ import '../rest/user_administrator_rest.dart';
 import '../rest/hello_rest.dart';
 import '../rest/user_ventas_rest.dart';
 import '../rest/order_rest.dart';
+import '../rest/product_type_rest.dart';
+
 var injector = new ModuleInjector([new Module()
 
   ..bind(DbConnection)
@@ -36,6 +40,8 @@ var injector = new ModuleInjector([new Module()
   ..bind(User_Administrator_Repository)
   ..bind(ProviderRepository)
   ..bind(OrderRepository)
+  ..bind(ProductTypeRepository)
+
 
   // services
   ..bind(UserService)
@@ -44,6 +50,7 @@ var injector = new ModuleInjector([new Module()
   ..bind(User_Administrator_Service)
   ..bind(ProviderService)
   ..bind(OrderService)	
+  ..bind(ProductTypeService)		
 
   // REST controllers
   ..bind(HelloRest)
@@ -53,4 +60,5 @@ var injector = new ModuleInjector([new Module()
   ..bind(UserVentasRest)
   ..bind(User_Administrator_Rest)
   ..bind(OrderRest)
+  ..bind(ProductTypeRest)
 ]);
