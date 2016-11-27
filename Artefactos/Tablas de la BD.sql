@@ -89,3 +89,15 @@ create table sale_product(
 
 insert into sale_product(id_sale, id_product, cantidad, precio_unidad) values (1, 1, 1, 58.90);
 insert into sale_product(id_sale, id_product, cantidad, precio_unidad) values (1, 2, 1, 13.10);
+/*Tabla CLiente SQL*/
+Create table client(
+  id SERIAL primary key,
+  first_name varchar,
+  last_name varchar,
+  dni integer,
+  ruc integer,
+  client_type INTEGER
+);
+
+insert into client(first_name,last_name,dni,ruc,client_type) values('sancho','panza',729285,96687,0);
+insert into client(first_name,last_name,dni,ruc,client_type) values('don','quijote',752936,11111,1);
