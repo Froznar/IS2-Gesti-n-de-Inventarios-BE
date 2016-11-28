@@ -15,7 +15,7 @@ CREATE TABLE "Order"(
     id_product int,
     order_state int,
     order_date Date
-)
+);
 INSERT INTO "Order"(id_provider,id_client,id_product,order_state,order_date) VALUES (1,2,3,0,'2016-09-02'::DATE);
 
 insert into "user"(first_name,last_name,email,account,user_type,"password") values('javier','marin','algo@gmail.com','paracelso',2,'contraceña');
@@ -37,9 +37,9 @@ insert into "provider"(name_provider,ruc,address,email,phone) values('nacho','12
 create table "warehouse" (
     id_warehouse SERIAL primary key,
     name_warehouse varchar,
-    map varchar,
+    map varchar
 );
-insert into "warehouse"(name_warehouse,map) values('Warehouse1', 'map1.jpg')
+insert into "warehouse"(name_warehouse,map) values('Warehouse1', 'map1.jpg');
 
 /*Tabla Sale MOdificada*/
 Create table sale(
@@ -70,15 +70,17 @@ Create table product(
   cod_item integer,
   codigo varchar,
   delivery_time integer,
-  location_warehouse varchar,
+  warehouse_location varchar,
   id_warehouse integer,
   FOREIGN KEY (id_warehouse) REFERENCES "warehouse"(id_warehouse)
 );
 
-insert into product(name_product,price,stock,grupo,subgrupo,cod_item,codigo,delivery_time,location_warehouse,id_warehouse) values('CajaMetalica',58.90,2000,1,3,6589,'01-03-6589',2,'location1',1);
-insert into product(name_product,price,stock,grupo,subgrupo,cod_item,codigo,delivery_time,location_warehouse,id_warehouse) values('Pegamento',13.10,2000,2,3,7899,'02-03-7899',2,'location2',1 );
-insert into product(name_product,price,stock,grupo,subgrupo,cod_item,codigo,delivery_time,location_warehouse,id_warehouse) values('Tubos',119,2000,1,3,4565,'01-03-4565',1,'location3',1);
-insert into product(name_product,price,stock,grupo,subgrupo,cod_item,codigo,delivery_time,location_warehouse,id_warehouse) values('Fierros',256.78,2000,3,3,1111,'03-03-1111',10,'location4',1);
+insert into product(name_product,price,stock,grupo,subgrupo,cod_item,codigo,delivery_time,warehouse_location,id_warehouse) values('CajaMetalica',58.90,2000,1,3,6589,'01-03-6589',2,'location1',1);
+insert into product(name_product,price,stock,grupo,subgrupo,cod_item,codigo,delivery_time,warehouse_location,id_warehouse) values('Pegamento',13.10,2000,2,3,7899,'02-03-7899',2,'location2',1 );
+insert into product(name_product,price,stock,grupo,subgrupo,cod_item,codigo,delivery_time,warehouse_location,id_warehouse) values('Tubos',119,2000,1,3,4565,'01-03-4565',1,'location3',1);
+insert into product(name_product,price,stock,grupo,subgrupo,cod_item,codigo,delivery_time,warehouse_location,id_warehouse) values('Fierros',256.78,2000,3,3,1111,'03-03-1111',10,'location4',1);
+insert into product(name_product,price,stock,grupo,subgrupo,cod_item,codigo,delivery_time,warehouse_location,id_warehouse) values('Fierros2',256.78,2000,3,3,1112,'03-03-1112',10,'location5',2);
+
 
 create table sale_product(
     id_sale_product SERIAL primary key,

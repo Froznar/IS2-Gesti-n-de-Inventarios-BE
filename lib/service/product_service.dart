@@ -14,6 +14,10 @@ class ProductService {
     return productRepository.findAll();
   }
 
+  Future<List<Product>> getByWarehouseId(int id_warehouse) {
+    return productRepository.find_id_warehouse(id_warehouse);
+  }
+
   Future<Product> getProductName(String name) {
     return productRepository.findProductName(name);
   }

@@ -26,6 +26,11 @@ class ProductRepository
         mapRowToProduct).toList();
   }
 
+  Future<List<Product>> find_id_warehouse(int id) async {
+    List<Product> products = (await connection.query('SELECT * FROM "product" WHERE id_warehouse = @id', {'id': id})).map(mapRowToProduct).toList();
+    return products;
+  }
+
   //Seleccionar Nombres de Productos
   Future<Product> findProductName(String name) async {
     Product product = (await connection.query('SELECT * FROM "product" WHERE name_product = @name', {'name':name})).map(mapRowToProduct).first;
@@ -35,14 +40,17 @@ class ProductRepository
   /*Agregando Producto Repositorio*/
   Product mapRowToProduct(pg.Row row) {
     return new Product()
-      ..id = row.id_product
-      ..nameProduct = row.name_product
+      ..id_product = row.id_product
+      ..name_product = row.name_product
       ..price = double.parse(row.price)
       ..stock = row.stock
       ..grupo = row.grupo
       ..subgrupo = row.subgrupo
       ..codItem = row.cod_item
-      ..codigo = row.codigo;
+      ..codigo = row.codigo
+      ..delivery_time = row.delivery_time
+      ..warehouse_location = row.warehouse_location
+      ..id_warehouse = row.id_warehouse;
   }
 
   String mapRowToString(pg.Row row) {

@@ -15,6 +15,11 @@ class ProductRest {
     return productService.get(int.parse(id));
   }
 
+  @ApiMethod(path: 'product_warehouse/{id_warehouse}')
+  Future<List<Product>> getProductByWarehouseId(String id_warehouse) {
+   return productService.getByWarehouseId(int.parse(id_warehouse));
+  }
+
   @ApiMethod(path: 'all')
   Future<List<Product>> getAllProducts() {
     return productService.getAll();
