@@ -7,6 +7,6 @@ class Product
   int stock;
   int grupo;
   int subgrupo;
-  int codItem; /*TercerParametro del Codigo*/
-  String codigo; /*grupo+subgrupo+codItem*/
+  int codItem; 
+  String codigo; 
 }
