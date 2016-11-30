@@ -15,10 +15,33 @@ CREATE TABLE "Order"(
     id_product int,
     order_state int,
     order_date Date 
-)
+);
+
+
+
+CREATE TABLE OrderState(
+    id_order_state int,
+    descripcion TEXT 
+);
+
+INSERT INTO OrderState VALUES(0,'Enviado');
+INSERT INTO OrderState VALUES(1,'Recibido');
+INSERT INTO OrderState VALUES(2,'Pendiente');
+INSERT INTO OrderState VALUES(3,'Recibido a tiempo');
+INSERT INTO OrderState VALUES(4,'Recibido Tarde');
+
+
 
 INSERT INTO "Order"(id_provider,id_client,id_product,order_state,order_date) VALUES (1,2,3,0,'2016-09-02'::DATE);
+INSERT INTO "Order"(id_provider,id_client,id_product,order_state,order_date) VALUES (2,2,1,1,'2016-10-06'::DATE);
 
+INSERT INTO "Order"(id_provider,id_client,id_product,order_state,order_date) VALUES (2,3,4,2,'2016-02-27'::DATE);
+
+INSERT INTO "Order"(id_provider,id_client,id_product,order_state,order_date) VALUES (3,3,2,2,'2016-02-02'::DATE);
+
+INSERT INTO "Order"(id_provider,id_client,id_product,order_state,order_date) VALUES (3,3,2,3,'2016-02-02'::DATE);
+
+INSERT INTO "Order"(id_provider,id_client,id_product,order_state,order_date) VALUES (1,1,1,4,'2016-02-02'::DATE);
 
 
 
@@ -35,10 +58,15 @@ insert into "user"(first_name,last_name,email,account,user_type,"password") valu
 insert into "user"(first_name,last_name,email,account,user_type,"password") values('Vanessa','Santillana','vs@gmail.com','ucsp',4,'pasword');
 
 
-create table "proveedor"(
-  id_proveedor SERIAL primary key,
-  name_proveedor varchar
+create table "provider"(
+  id_provider SERIAL primary key,
+  name_provider varchar,
+  RUC varchar,
+  address varchar,
+  email varchar,
+  phone varchar
 );
 
-insert into "proveedor"(name_proveedor) values('juan');
+insert into "provider"(name_provider,ruc,address,email,phone) values('nacho','12345','av.ventura 1234','nash@vent.com','95736722');
+
 
