@@ -36,7 +36,27 @@ class OrderRepository {
     List<Order> order = (await connection.query('SELECT * FROM "Order" WHERE Extract(month from order_date) = @month and order_state = 0', {'month':month})).map(mapRowToOrder).toList();
     return order;
   }
+  
+  Future<List<Order>> findPendingByMonthStart(int month) async {
+    List<Order> order = (await connection.query('SELECT * FROM "Order" WHERE Extract(month from order_date) = @month and order_state = 2 and Extract(day from order_date) < 10', {'month':month})).map(mapRowToOrder).toList();
+    return order;
+  }
+  
+  Future<List<Order>> findPendingByMonthEnd(int month) async {
+    List<Order> order = (await connection.query('SELECT * FROM "Order" WHERE Extract(month from order_date) = @month and order_state = 2 and Extract(day from order_date) > 20', {'month':month})).map(mapRowToOrder).toList();
+    return order;
+  }
 
+  Future<List<Order>> findReceivedOnTime() async {
+    List<Order> order = (await connection.query('SELECT * FROM "Order" WHERE order_state = 3')).map(mapRowToOrder).toList();
+    return order;
+  } 
+
+  Future<List<Order>> findReceivedLate() async {
+    List<Order> order = (await connection.query('SELECT * FROM "Order" WHERE order_state = 4')).map(mapRowToOrder).toList();
+    return order;
+  }   	
+  
   Future<List<Order>> findAll() async {
     return (await connection.query('SELECT * FROM "Order"')).map(mapRowToOrder).toList();
   }
