@@ -4,7 +4,10 @@ import 'package:di/di.dart';
 import 'package:postgresql/postgresql.dart' as pg;
 import '../config/db_connection.dart';
 import '../model/order.dart';
+import '../model/quantity.dart';
 import 'dart:convert';
+
+
 
 class OrderRepository {
   DbConnection connection;
@@ -56,6 +59,16 @@ class OrderRepository {
     List<Order> order = (await connection.query('SELECT * FROM "Order" WHERE order_state = 4')).map(mapRowToOrder).toList();
     return order;
   }   	
+
+  Future<Num> findReceivedLateCount() async {
+    Num num = (await connection.query('SELECT count(*) as quantity FROM "Order" WHERE order_state = 4')).map(mapRowToNum).first;
+    return num;
+  }
+
+  Future<Percentage> findReceivedLatePercentage() async {
+    Num num = (await connection.query('SELECT (SELECT CAST(count(*) as DOUBLE PRECISION) * 100 / (SELECT CAST(count(*) as DOUBLE PRECISION) as total from "Order") as quantity from "Order" where order_state = 4) as percentage')).map(mapRowToPercentage).first;
+    return num;
+  }
   
   Future<List<Order>> findAll() async {
     return (await connection.query('SELECT * FROM "Order"')).map(mapRowToOrder).toList();
@@ -69,5 +82,15 @@ class OrderRepository {
       ..id_product = row.id_product
       ..order_state = row.order_state
       ..order_date = row.order_date;
+  }
+
+  Num mapRowToNum(pg.Row row) {
+    return new Num()
+      ..quantity = row.quantity;
+  }
+
+  Percentage mapRowToPercentage(pg.Row row) {
+    return new Percentage()
+      ..percentage = row.percentage;
   }
 }

@@ -3,6 +3,7 @@ import 'package:rpc/rpc.dart';
 
 import '../service/order_service.dart';
 import '../model/order.dart';
+import '../model/quantity.dart';
 
 @ApiClass(name: 'order', version: 'v1', description: 'Order server side API')
 class OrderRest {
@@ -54,6 +55,16 @@ class OrderRest {
   Future<List<Order>> getReceivedOrderLate(){
     return orderService.getReceivedLate();
   }  
+
+  @ApiMethod(path: 'order/received/late/count')
+  Future<Num> getReceivedOrderLateCount(){
+    return orderService.getReceivedLateCount();
+  }  
+
+  @ApiMethod(path: 'order/received/late/percentage')
+  Future<Percentage> getReceivedOrderLatePercentage(){
+    return orderService.getReceivedLatePercentage();
+  } 
   
   @ApiMethod(path: 'all')
   Future<List<Order>> getOrders() {
