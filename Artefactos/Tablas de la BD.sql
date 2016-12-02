@@ -71,16 +71,15 @@ Create table product(
   codigo varchar,
   delivery_time integer,
   warehouse_location varchar,
-  id_warehouse integer,
-  FOREIGN KEY (id_warehouse) REFERENCES "warehouse"(id_warehouse)
+
 );
 
-insert into product(name_product,price,stock,grupo,subgrupo,cod_item,codigo,delivery_time,warehouse_location,id_warehouse) values('CajaMetalica',58.90,2000,1,3,6589,'01-03-6589',2,'location1',1);
-insert into product(name_product,price,stock,grupo,subgrupo,cod_item,codigo,delivery_time,warehouse_location,id_warehouse) values('Pegamento',13.10,2000,2,3,7899,'02-03-7899',2,'location2',1 );
-insert into product(name_product,price,stock,grupo,subgrupo,cod_item,codigo,delivery_time,warehouse_location,id_warehouse) values('Tubos',119,2000,1,3,4565,'01-03-4565',1,'location3',1);
-insert into product(name_product,price,stock,grupo,subgrupo,cod_item,codigo,delivery_time,warehouse_location,id_warehouse) values('Fierros',256.78,2000,3,3,1111,'03-03-1111',10,'location4',1);
-insert into product(name_product,price,stock,grupo,subgrupo,cod_item,codigo,delivery_time,warehouse_location,id_warehouse) values('Fierros2',256.78,2000,3,3,1112,'03-03-1112',10,'location5',2);
-insert into product(name_product,price,stock,grupo,subgrupo,cod_item,codigo,delivery_time,warehouse_location,id_warehouse) values('Fierros3',256.78,0,3,3,1113,'03-03-1113',10,'location6',2);
+insert into product(name_product,price,stock,grupo,subgrupo,cod_item,codigo,delivery_time,warehouse_location) values('CajaMetalica',58.90,2000,1,3,6589,'01-03-6589',2,'location1');
+insert into product(name_product,price,stock,grupo,subgrupo,cod_item,codigo,delivery_time,warehouse_location) values('Pegamento',13.10,2000,2,3,7899,'02-03-7899',2,'location2');
+insert into product(name_product,price,stock,grupo,subgrupo,cod_item,codigo,delivery_time,warehouse_location) values('Tubos',119,2000,1,3,4565,'01-03-4565',1,'location3');
+insert into product(name_product,price,stock,grupo,subgrupo,cod_item,codigo,delivery_time,warehouse_location) values('Fierros',256.78,2000,3,3,1111,'03-03-1111',10,'location4');
+insert into product(name_product,price,stock,grupo,subgrupo,cod_item,codigo,delivery_time,warehouse_location) values('Fierros2',256.78,2000,3,3,1112,'03-03-1112',10,'location5');
+insert into product(name_product,price,stock,grupo,subgrupo,cod_item,codigo,delivery_time,warehouse_location) values('Fierros3',256.78,0,3,3,1113,'03-03-1113',10,'location6');
 
 
 create table sale_product(

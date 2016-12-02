@@ -11,5 +11,4 @@ class Product
   String codigo; /*grupo+subgrupo+codItem*/
   int delivery_time;
   String warehouse_location;
-  int id_warehouse;
 }

@@ -26,8 +26,8 @@ class ProductRepository
         mapRowToProduct).toList();
   }
 
-  Future<List<Product>> find_id_warehouse(int id) async {
-    List<Product> products = (await connection.query('SELECT * FROM "product" WHERE id_warehouse = @id and stock>0', {'id': id})).map(mapRowToProduct).toList();
+  Future<List<Product>> availableProducts() async {
+    List<Product> products = (await connection.query('SELECT * FROM "product" WHERE stock>0')).map(mapRowToProduct).toList();
     return products;
   }
 
@@ -49,8 +49,7 @@ class ProductRepository
       ..codItem = row.cod_item
       ..codigo = row.codigo
       ..delivery_time = row.delivery_time
-      ..warehouse_location = row.warehouse_location
-      ..id_warehouse = row.id_warehouse;
+      ..warehouse_location = row.warehouse_location;
   }
 
   String mapRowToString(pg.Row row) {
