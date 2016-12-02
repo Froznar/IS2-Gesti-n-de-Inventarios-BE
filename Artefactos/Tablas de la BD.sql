@@ -80,6 +80,7 @@ insert into product(name_product,price,stock,grupo,subgrupo,cod_item,codigo,deli
 insert into product(name_product,price,stock,grupo,subgrupo,cod_item,codigo,delivery_time,warehouse_location,id_warehouse) values('Tubos',119,2000,1,3,4565,'01-03-4565',1,'location3',1);
 insert into product(name_product,price,stock,grupo,subgrupo,cod_item,codigo,delivery_time,warehouse_location,id_warehouse) values('Fierros',256.78,2000,3,3,1111,'03-03-1111',10,'location4',1);
 insert into product(name_product,price,stock,grupo,subgrupo,cod_item,codigo,delivery_time,warehouse_location,id_warehouse) values('Fierros2',256.78,2000,3,3,1112,'03-03-1112',10,'location5',2);
+insert into product(name_product,price,stock,grupo,subgrupo,cod_item,codigo,delivery_time,warehouse_location,id_warehouse) values('Fierros3',256.78,0,3,3,1113,'03-03-1113',10,'location6',2);
 
 
 create table sale_product(

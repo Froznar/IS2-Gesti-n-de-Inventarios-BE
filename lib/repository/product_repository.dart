@@ -27,7 +27,7 @@ class ProductRepository
   }
 
   Future<List<Product>> find_id_warehouse(int id) async {
-    List<Product> products = (await connection.query('SELECT * FROM "product" WHERE id_warehouse = @id', {'id': id})).map(mapRowToProduct).toList();
+    List<Product> products = (await connection.query('SELECT * FROM "product" WHERE id_warehouse = @id and stock>0', {'id': id})).map(mapRowToProduct).toList();
     return products;
   }
 
