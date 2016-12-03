@@ -44,8 +44,10 @@ class SaleRepository {
     return findSaleBuyer(name_buyer);
   }
 
-  /*Future<List<Sale>> findByRangeDate(DateTime initialDate, DateTime finalDate) async {
-  }*/
+  Future<Sale> findLastSale() async {
+    Sale sale = (await connection.query('SELECT * FROM "sale" ')).map(mapRowToSale).last;
+    return sale;
+  }
 
   Sale mapRowToSale(pg.Row row) {
     return new Sale()

@@ -61,4 +61,10 @@ class ProductRepository
       ..cantidad = row.cantidad
       ..priceUnit = double.parse(row.precio_unidad);
   }
+
+  //Busca el Ultimo Producto Insertado
+  Future<Product> findLastProduc() async {
+    Product product = (await connection.query( 'SELECT * FROM "product" ')) .map(mapRowToProduct) .last;
+    return product;
+  }
 }

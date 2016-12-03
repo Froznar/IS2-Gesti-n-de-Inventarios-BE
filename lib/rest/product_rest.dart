@@ -37,4 +37,9 @@ class ProductRest {
   Future<Product> getSaleId(int id) {
     return productService.getSaleId(id);
   }
+
+  @ApiMethod(path: 'lastProduct')
+  Future<Product> getLastProduct() {
+    return productService.getLastProduct();
+  }
 }
