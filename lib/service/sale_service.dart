@@ -18,8 +18,18 @@ class SaleService {
     return saleRepository.findSaleBuyer(name);
   }
 
-  Future<List<Sale>> getAllDateSale(String fecha1, String fecha2) {
-    return saleRepository.findSaleDate(fecha1,fecha2);
+    Future<List<Sale>> getAllDateSale(String fecha) {
+	List<String>fechas=["",""];
+	int b=0;
+	for(int a=0;a<fecha.length;a++){
+	    if(fecha[a]=="%"){
+		b++;
+		a=a+3;
+	    }
+	    fechas[b]=fechas[b]+fecha[a];
+	}
+	
+    return saleRepository.findSaleDate(fechas[0],fechas[1]);
   }
 
   Future<Sale> setSale(String data) {
