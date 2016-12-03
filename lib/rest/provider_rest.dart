@@ -11,8 +11,9 @@ class ProviderRest {
   ProviderRest(this.providerService);
 
   @ApiMethod(path: 'provider/{id}')
-  Future<Provider> getProvider(String id) {
-    return providerService.get(int.parse(id));
+    Future<Provider> getProvider(String id) {
+      print("pasee");
+      return providerService.get(int.parse(id));
   }
 
   @ApiMethod(path: 'provider/name/{name}')
