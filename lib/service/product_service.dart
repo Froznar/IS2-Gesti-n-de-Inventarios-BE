@@ -17,4 +17,8 @@ class ProductService {
   Future<Product> getProductName(String name) {
     return productRepository.findProductName(name);
   }
+
+  Future<Product> getLastProduct() {
+    return productRepository.findLastProduc();
+  }
 }
