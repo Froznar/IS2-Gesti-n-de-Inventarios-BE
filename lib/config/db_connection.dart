@@ -2,13 +2,19 @@ import 'dart:async';
 import 'package:postgresql/postgresql.dart' as pg;
 
 class DbConnection {
-
- static final String hostname = "localhost";
- static final String username = "postgres";
-  static final String password = "ucsp";
-  static final String database = "Gestion_inventarios";
- tatic final int port = 5432;
-  static final String URI = 'postgres://$username:$password@$hostname:$port/$database';
+    
+    static final String hostname = "localhost";
+    /* 
+          static final String username = "nacho";
+    static final String password = "123456";
+    static final String database = "software";
+ 
+    */
+    static final String username = "postgres";
+    static final String password = "ucsp";
+    static final String database = "Gestion_inventarios";
+    static final int port = 5432;
+    static final String URI = 'postgres://$username:$password@$hostname:$port/$database';
 
   DbConnection();
 
