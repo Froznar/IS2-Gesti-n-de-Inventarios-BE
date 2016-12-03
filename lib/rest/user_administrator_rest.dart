@@ -25,9 +25,9 @@ class User_Administrator_Rest {
     user_administrator_service.insert(data);
   }
 
-  @ApiMethod(path: 'user_administrator/update/{data}')
+  @ApiMethod(path: 'user_administrator/updateuser/{data}')
   Future<Null> updateUser(String data) {
-    user_administrator_service.update(data);
+    user_administrator_service.updateUser(data);
   }
 
 

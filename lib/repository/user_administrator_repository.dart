@@ -40,17 +40,18 @@ class User_Administrator_Repository {
     }
   }
 
+
   Future<Null> updateExistingUser(String first_name,String last_name,String email,String account,String password,String user_type,int id) async {
     if(user_type =='1') {
-      await connection.query('UPDATE "user" set first_name=@first_name, last_name=@lastname, email=@email, account=@account, password=@password, user_type=1 where id=@id; values (@first_name, @last_name, @email, @account, @password, 1)',
+      await connection.query('UPDATE "user" set first_name=@first_name, last_name=@last_name, email=@email, account=@account, password=@password, user_type=1 where id=@id; values (@first_name, @last_name, @email, @account, @password, 1)',
           {'first_name':first_name, 'last_name':last_name, 'email':email, 'account':account, 'password':password, 'id':id});
     }
     if(user_type == '2') {
-      await connection.query('UPDATE "user" set first_name=@first_name, last_name=@lastname, email=@email, account=@account, password=@password, user_type=2 where id=@id; values (@first_name, @last_name, @email, @account, @password, 1)',
+      await connection.query('UPDATE "user" set first_name=@first_name, last_name=@last_name, email=@email, account=@account, password=@password, user_type=2 where id=@id; values (@first_name, @last_name, @email, @account, @password, 1)',
           {'first_name':first_name, 'last_name':last_name, 'email':email, 'account':account, 'password':password, 'id':id});
     }
     if(user_type == '3') {
-      await connection.query('UPDATE "user" set first_name=@first_name, last_name=@lastname, email=@email, account=@account, password=@password, user_type=3 where id=@id; values (@first_name, @last_name, @email, @account, @password, 1)',
+      await connection.query('UPDATE "user" set first_name=@first_name, last_name=@last_name, email=@email, account=@account, password=@password, user_type=3 where id=@id; values (@first_name, @last_name, @email, @account, @password, 1)',
           {'first_name':first_name, 'last_name':last_name, 'email':email, 'account':account, 'password':password, 'id':id});
     }
   }
