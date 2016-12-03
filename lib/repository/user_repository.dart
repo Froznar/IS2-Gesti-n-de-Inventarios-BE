@@ -24,6 +24,7 @@ class UserRepository {
     return (await connection.query('SELECT * FROM "user"')).map(mapRowToUser).toList();
   }
 
+
   User mapRowToUser(pg.Row row) {
     return new User()
       ..id = row.id

@@ -5,6 +5,6 @@ class Sale {
   int RUC;
   String address;
   String voucher;
-  int priceTotal;
+  double priceTotal;
   DateTime dateSale;
 }
