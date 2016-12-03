@@ -78,14 +78,14 @@ Create table sale(
   ruc integer,
   address varchar,
   voucher varchar,
-  price_total integer,
+  price_total decimal,
   date_sale TIMESTAMP WITH TIME ZONE
 );
 
 insert into sale(name_buyer,dni,ruc,address,voucher,price_total,date_sale)
-values('Maria Sanchez',72545430,1423,'Av Independencia','voucher 1',50,'now');
+values('Maria Sanchez',72545430,1423,'Av Independencia','voucher 1',50.3,'now');
 insert into sale(name_buyer,dni,ruc,address,voucher,price_total,date_sale)
-values('PatoLucas',787579,1423,'Av Coritos','voucher 1',50,'now');
+values('PatoLucas',787579,1423,'Av Coritos','voucher 1',50.1,'now');
 
 /*Clase Producto Oficial*/
 Create table product(
