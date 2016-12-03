@@ -15,6 +15,11 @@ class ProductRest {
     return productService.get(int.parse(id));
   }
 
+  @ApiMethod(path: 'available_products')
+  Future<List<Product>> availableProducts() {
+   return productService.getAvailableProducts();
+  }
+
   @ApiMethod(path: 'all')
   Future<List<Product>> getAllProducts() {
     return productService.getAll();

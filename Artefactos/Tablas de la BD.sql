@@ -57,7 +57,6 @@ insert into "user"(first_name,last_name,email,account,user_type,"password") valu
 insert into "user"(first_name,last_name,email,account,user_type,"password") values('Paula','','paula@gmail.com','ucsp',3,'pass');
 insert into "user"(first_name,last_name,email,account,user_type,"password") values('Vanessa','Santillana','vs@gmail.com','ucsp',4,'pasword');
 
-
 create table "provider"(
   id_provider SERIAL primary key,
   name_provider varchar,
@@ -66,9 +65,14 @@ create table "provider"(
   email varchar,
   phone varchar
 );
-
 insert into "provider"(name_provider,ruc,address,email,phone) values('nacho','12345','av.ventura 1234','nash@vent.com','95736722');
 
+create table "warehouse" (
+    id_warehouse SERIAL primary key,
+    name_warehouse varchar,
+    map varchar
+);
+insert into "warehouse"(name_warehouse,map) values('Warehouse1', 'map1.jpg');
 
 /*Tabla Sale MOdificada*/
 Create table sale(
