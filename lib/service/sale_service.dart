@@ -32,7 +32,7 @@ class SaleService {
     }
 
     
-    Future<Sale> setSale(String data) {
+        Future<Sale> setSale(String data) {
 	List<String>new_data= ["", "","","","","",""];
 	int b=0;
 	for(int a=0;a<data.length;a++){
@@ -43,5 +43,8 @@ class SaleService {
 	    new_data[b]=new_data[b]+data[a];
 	}
 	return saleRepository.registerSale(new_data[0],new_data[1],new_data[2],new_data[3],new_data[4],new_data[5],new_data[6]);
-    }
+  }
+  Future<Sale> getLastSale() {
+    return saleRepository.findLastSale();
+  }
 }
