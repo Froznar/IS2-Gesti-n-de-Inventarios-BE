@@ -12,13 +12,19 @@ class UserVentasRest {
 
   @ApiMethod(path: 'user_ventas/{id}')
   Future<User> getUser(String id) {
-    return User_ventasService.get(int.parse(id));
+      return User_ventasService.get(int.parse(id));
   }
 
   @ApiMethod(path: 'user_ventas/name/{name}')
   Future<List<User>> get_nameUser_ventas(String name) {
     return User_ventasService.get_nameUser_ventas(name);
   }
+
+    @ApiMethod(path: 'user_ventas/reporte/{fecha}')
+    Future<List<List<String>>> get_report(String fecha) {
+	return User_ventasService.get_report(fecha);
+  }
+
 
   @ApiMethod(path: 'all')
   Future<List<User>> getUser_ventas() {

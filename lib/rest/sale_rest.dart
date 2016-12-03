@@ -25,7 +25,8 @@ class SaleRest {
   Future<List<Sale>> getAllSaleDate(String fecha) {
     return saleService.getAllDateSale(fecha);
   }
-
+  
+  
   @ApiMethod(path: 'saleBuyer/{name}')
   Future<Sale> getSaleBuyer(String name) {
     return saleService.getSaleBuyer(name);

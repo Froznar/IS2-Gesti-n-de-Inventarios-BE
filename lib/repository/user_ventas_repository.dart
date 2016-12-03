@@ -8,11 +8,12 @@ import '../model/user.dart';
 class UserVentasRepository {
   DbConnection connection;
 
-  UserVentasRepository(this.connection);
-
-  Future<User> find(int id) async {
-    User user = (await connection.query('SELECT * FROM "user" WHERE id = @id AND user_type=4', {'id': id})).map(mapRowToUser).first;
-    return user;
+    UserVentasRepository(this.connection);
+    
+    Future<User> find(int id) async {
+	print("pasee a repositori");
+	User user = (await connection.query('SELECT * FROM "user" WHERE id = @id AND user_type=4', {'id': id})).map(mapRowToUser).first;
+	return user;
   }
 
   Future<List<User>> find_name(String name) async {

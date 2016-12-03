@@ -34,7 +34,7 @@ class OrderRepository {
     List<Order> order = (await connection.query('SELECT * FROM "Order" WHERE Extract(month from order_date) = @month and order_state = 1', {'month':month})).map(mapRowToOrder).toList();
     return order;
   }
-
+ 
   Future<List<Order>> findSentByMonth(int month) async {
     List<Order> order = (await connection.query('SELECT * FROM "Order" WHERE Extract(month from order_date) = @month and order_state = 0', {'month':month})).map(mapRowToOrder).toList();
     return order;
