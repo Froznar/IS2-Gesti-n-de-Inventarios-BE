@@ -15,6 +15,11 @@ class UserRest {
     return userService.get(int.parse(id));
   }
 
+  @ApiMethod(path: 'user/account/{account}')
+  Future<User> getUserAccount(String account){
+    return userService.getAccount(account);
+  }
+
   @ApiMethod(path: 'all')
   Future<List<User>> getUsers() {
     return userService.getAll();

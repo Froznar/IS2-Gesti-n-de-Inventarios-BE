@@ -19,9 +19,19 @@ class User_Administrator_Repository {
   Future<List<User>> findAll() async {
     return (await connection.query('SELECT * FROM "user" WHERE user_type=3')).map(mapRowToUser).toList();
   }
+  /*Find email*/
+  Future<User> find_email(String email) async {
+    User user = (await connection.query('SELECT * FROM "user" WHERE email = @email AND user_type=3', {'email': email})).map(mapRowToUser).first;
+    return user;
+  }
 
+  Future<User> createUser(String first_name,String last_name,String email,String account,String password,String user_type) async{
 
-
+    await connection.query('INSERT INTO "user" (first_name,last_name, email, account, password,user_type) values (@first_name, @last_name, @email, @account, @password, 1)',
+        {'first_name':first_name, 'last_name':last_name, 'email':email, 'account':account, 'password':password, 'user_type':user_type});
+    print("repapiiiiiii");
+    return find(1);
+  }
 
   User mapRowToUser(pg.Row row) {
     return new User()
