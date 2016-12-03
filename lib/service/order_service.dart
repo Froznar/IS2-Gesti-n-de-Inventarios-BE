@@ -1,5 +1,6 @@
 import '../repository/order_repository.dart';
 import '../model/order.dart';
+import '../model/quantity.dart';
 import 'dart:async';
 
 class OrderService {
@@ -26,6 +27,30 @@ class OrderService {
     return orderRepository.findSentByMonth(month);
   }
 
+  Future<List<Order>> getPendingByMonthStart(int month){
+    return orderRepository.findPendingByMonthStart(month);
+  }
+  
+  Future<List<Order>> getPendingByMonthEnd(int month){
+    return orderRepository.findPendingByMonthEnd(month);
+  }  
+
+  Future<List<Order>> getReceivedOnTime(){
+    return orderRepository.findReceivedOnTime();
+  }   
+
+  Future<List<Order>> getReceivedLate(){
+    return orderRepository.findReceivedLate();
+  }   
+
+  Future<Num> getReceivedLateCount(){
+    return orderRepository.findReceivedLateCount();
+  }   
+
+  Future<Percentage> getReceivedLatePercentage(){
+    return orderRepository.findReceivedLatePercentage();
+  }
+  
   Future<List<Order>> getAll() {
     return orderRepository.findAll();
   }
