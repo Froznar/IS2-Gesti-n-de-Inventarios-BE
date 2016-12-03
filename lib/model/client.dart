@@ -4,5 +4,5 @@ class Client {
   String last_name;
   int dni;
   int ruc;
-  int client_type;
+  int client_type; /*Usuario= 0 Empresa = 1*/
 }
