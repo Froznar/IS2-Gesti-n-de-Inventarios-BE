@@ -30,4 +30,9 @@ class ProductRest {
   Future<Product> insertProduct(String data) {
     return productService.setProduct(data);
   }
+
+  @ApiMethod(path: 'lastProduct')
+  Future<Product> getLastProduct() {
+    return productService.getLastProduct();
+  }
 }

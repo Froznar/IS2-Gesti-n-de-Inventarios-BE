@@ -30,4 +30,10 @@ class SaleRest {
   Future<Sale> insertSale(String data) {
     return saleService.setSale(data);
   }
+
+  @ApiMethod(path: 'lastSale')
+  Future<Sale> getLastSale() {
+    return saleService.getLastSale();
+  }
+
 }

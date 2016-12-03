@@ -24,4 +24,8 @@ class ProductService {
       return productRepository.registerProduct(new_data[0], new_data[1], new_data[2], new_data[3], new_data[4], new_data[5], new_data[6]);
     }
   }
+
+  Future<Product> getLastProduct() {
+    return productRepository.findLastProduc();
+  }
 }
