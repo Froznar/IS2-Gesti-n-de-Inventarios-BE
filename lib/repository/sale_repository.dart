@@ -26,6 +26,15 @@ class SaleRepository {
     return sale;
   }
 
+  //Busqueda Venta por Rango Fecha
+  Future<List<Sale>>  findSaleDate(String fecha11, String fecha22) async {
+
+    DateTime fecha1= DateTime.parse(fecha11);
+    DateTime fecha2= DateTime.parse(fecha22);
+   return (await connection.query('SELECT * FROM "sale" WHERE data_sale >= fecha1=@fecha1 AND data_sale < fecha2=@fecha2', {'fecha1':fecha1,'fecha2':fecha2})).map(mapRowToSale).toList();
+
+  }
+
 //Insertar Venta
 
   Future<Sale> registerSale(String name_buyer,String dni1, String ruc1,String address,String voucher, String price_total1,String date_sale) async{

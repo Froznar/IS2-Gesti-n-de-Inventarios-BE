@@ -18,6 +18,10 @@ class SaleService {
     return saleRepository.findSaleBuyer(name);
   }
 
+  Future<List<Sale>> getAllDateSale(String fecha1, String fecha2) {
+    return saleRepository.findSaleDate(fecha1,fecha2);
+  }
+
   Future<Sale> setSale(String data) {
     List<String>new_data= ["", "","","","","",""];
     int b=0;
