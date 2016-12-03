@@ -20,7 +20,7 @@ class SaleRest {
     return saleService.getAll();
   }
 
-  @ApiMethod(path: 'allDate/{fecha1%fecha2}')
+  @ApiMethod(path: 'allDate/{fecha1}{fecha2}')
   Future<List<Sale>> getAllSaleDate(String fecha1,String fecha2) {
     return saleService.getAllDateSale(fecha1,fecha2);
   }
