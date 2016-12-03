@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:postgresql/postgresql.dart' as pg;
 import '../config/db_connection.dart';
 import '../model/product.dart';
+import '../model/sale_product.dart';
 
 class ProductRepository
 {
@@ -30,6 +31,14 @@ class ProductRepository
     return findProductName(name_product);
   }
 
+  //Busqueda Venta por Id Retorna un producto o lista de productos  http://localhost:9090/product/v1/saleId/1
+  Future<Product> findSaleId(int id_sale) async {
+    Product product;
+    SaleProduct saleProduct = (await connection.query('SELECT * FROM "sale_product" WHERE id_sale = @id_sale', {'id_sale': id_sale})).map(mapRowToSaleProduct).first;
+    product = (await connection.query( 'SELECT * FROM "product" WHERE id_product = @idProduct', {'idProduct': saleProduct.id_product})) .map(mapRowToProduct) .first;
+    return product;
+  }
+
   /*Agregando Producto Repositorio*/
   Product mapRowToProduct(pg.Row row) {
     return new Product()
@@ -43,7 +52,12 @@ class ProductRepository
       ..codigo = row.codigo;
   }
 
-  String mapRowToString(pg.Row row) {
-    return  row.name_product;
+  SaleProduct mapRowToSaleProduct(pg.Row row){
+    return new SaleProduct()
+      ..id_sale_product = row.id_sale_product
+      ..id_sale = row.id_sale
+      ..id_product = row.id_product
+      ..cantidad = row.cantidad
+      ..priceUnit = double.parse(row.precio_unidad);
   }
 }
