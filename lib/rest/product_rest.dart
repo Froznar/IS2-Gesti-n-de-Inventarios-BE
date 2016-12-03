@@ -32,6 +32,7 @@ class ProductRest {
   }
 
 
+  /*Funcion para Acceder*/
   @ApiMethod(path: 'saleId/{id}')
   Future<Product> getSaleId(int id) {
     return productService.getSaleId(id);

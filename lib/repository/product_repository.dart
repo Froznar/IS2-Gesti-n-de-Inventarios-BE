@@ -31,7 +31,8 @@ class ProductRepository
     return findProductName(name_product);
   }
 
-  //Busqueda Venta por Id Retorna un producto o lista de productos  http://localhost:9090/product/v1/saleId/1
+  /* http://localhost:9090/product/v1/saleId/1*/
+  //Busqueda Venta por Id Retorna un producto o lista de productos
   Future<Product> findSaleId(int id_sale) async {
     Product product;
     SaleProduct saleProduct = (await connection.query('SELECT * FROM "sale_product" WHERE id_sale = @id_sale', {'id_sale': id_sale})).map(mapRowToSaleProduct).first;

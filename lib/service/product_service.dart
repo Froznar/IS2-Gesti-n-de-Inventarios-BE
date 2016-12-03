@@ -25,6 +25,7 @@ class ProductService {
     }
   }
 
+  /*Funcion para Acceder*/
   Future<Product> getSaleId(int id) {
     return productRepository.findSaleId(id);
   }
