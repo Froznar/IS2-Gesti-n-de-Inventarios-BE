@@ -23,4 +23,15 @@ class SaleProductRest{
     Future<List<SaleProduct>> getSaleProductsBySale (String id_sale){
         return saleProductService.getBySale(int.parse(id_sale));
     }
+
+    @ApiMethod(path: 'sale_product_by_product/{id_product}')
+    Future<List<SaleProduct>> getSaleProductsByProduct (String id_product){
+        return saleProductService.getBySale(int.parse(id_product));
+    }
+
+    /*Manera de insertar localhost:9090/sale_product/v1/sale_product_insert/2-1-5-13.10*/
+    @ApiMethod(path: 'sale_product_insert/{data}')
+    Future<SaleProduct> insertSale(String data) {
+        return saleProductService.setSaleProduct(data);
+    }
 }
