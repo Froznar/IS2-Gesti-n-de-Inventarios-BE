@@ -42,5 +42,4 @@ class SaleRest {
   Future<Sale> getLastSale() {
     return saleService.getLastSale();
   }
-
 }

@@ -29,7 +29,8 @@ class ProductService {
   Future<Product> getSaleId(int id) {
     return productRepository.findSaleId(id);
   }
-  Future<Product> getLastProduct() {
+
+Future<Product> getLastProduct() {
     return productRepository.findLastProduc();
   }
 }

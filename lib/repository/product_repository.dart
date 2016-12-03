@@ -40,6 +40,11 @@ class ProductRepository
     return product;
   }
 
+  //Busca el Ultimo Producto Insertado
+  Future<Product> findLastProduc() async {
+    Product product = (await connection.query( 'SELECT * FROM "product" ')) .map(mapRowToProduct) .last;
+    return product;
+  }
   /*Agregando Producto Repositorio*/
   Product mapRowToProduct(pg.Row row) {
     return new Product()
@@ -63,7 +68,7 @@ class ProductRepository
   }
 
   //Busca el Ultimo Producto Insertado
-  Future<Product> findLastProduc() async {
+  Future<Product> findLastProduct() async {
     Product product = (await connection.query( 'SELECT * FROM "product" ')) .map(mapRowToProduct) .last;
     return product;
   }
