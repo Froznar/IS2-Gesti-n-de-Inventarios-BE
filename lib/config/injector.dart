@@ -35,6 +35,7 @@ import '../rest/sale_rest.dart';
 import '../rest/sale_product_rest.dart';
 import '../rest/client_rest.dart';
 import '../rest/provider_rest.dart';
+
 var injector = new ModuleInjector([new Module()
 
   ..bind(DbConnection)
